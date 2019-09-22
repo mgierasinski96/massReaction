@@ -3,10 +3,10 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <html>
 <head>
+<style>
+</style>
 
 </head>
 <body>
-
-hi
 </body>
 </html>

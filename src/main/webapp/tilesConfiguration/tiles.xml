@@ -24,6 +24,7 @@
     </definition>
 
 
+
     <definition name="mainBody" extends="base.definition">
         <put-attribute name="title" value="MainBody" />
         <put-attribute name="body" value="/views/mainBody.jsp" />
