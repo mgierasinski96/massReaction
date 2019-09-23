@@ -21,6 +21,7 @@
     top: 0;
     background-image: url(/resources/backgrounds/headerBackground.jpg);
     background-repeat: repeat-x;
+    z-index: 50;
 
 }
 #tresc
@@ -28,10 +29,9 @@
     background-image: url(/resources/backgrounds/backroundPattern.jpg);
     background-repeat: repeat;
     position: absolute;
-    height: 600px;
+    height: 800px;
     width: 100%;
     top: 180px;
-    background-color: blue;
 }
 
 
@@ -49,8 +49,8 @@
 <body>
 
 <div id="content">
-    <div id="naglowek"><tiles:insertAttribute name="header" />/div>
-    <div id="tresc"><tiles:insertAttribute name="body" /></div>
+    <div id="naglowek"><tiles:insertAttribute name="header"/></div>
+    <div id="tresc"><tiles:insertAttribute name="body"/></div>
 </div>
 
 </body>
