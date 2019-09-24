@@ -20,7 +20,8 @@
         {
             position:absolute;
             margin-top: 10px;
-            margin-left: 35%;
+            margin-left: -250px;
+            left:50%;
             width: 500px;
             height: 120px;
         }
@@ -49,6 +50,7 @@
             margin-top: 70px;
             margin-left: 73%;
             font-style: italic;
+
 
         }
 
