@@ -4,39 +4,42 @@ package mgierasinski.domain;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+
 
 @Entity
-@Table(name="userCharacter")
+@Table(name = "userCharacter")
 public class AppUser {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="userId")
-    long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "userId")
+    private long id;
 
-    @Column(name="userLvl")
+    @Column(name = "userLvl")
     private String userLvl;
 
-    @Column(name="userGold")
+    @Column(name = "userGold")
     private String userGold;
 
-    @Column(name="userWisdom")
+    @Column(name = "userWisdom")
     private String userWisdom;
 
-    @Column(name="userStrength")
+    @Column(name = "userStrength")
     private String userStrength;
 
-    @Column(name="userHP")
+    @Column(name = "userHP")
     private String userHP;
 
-    @Column(name="userTotalHP")
+    @Column(name = "userTotalHP")
     private String userTotalHP;
 
-    @Column(name="userTotalDmg")
+    @Column(name = "userTotalDmg")
     private String userTotalDmg;
 
-    @Column(name="userTotalDodge")
+    @Column(name = "userTotalDodge")
     private String userTotalDodge;
 
     @ManyToOne
@@ -44,13 +47,23 @@ public class AppUser {
     private Profession userProfession;
 
 
-    public AppUser()
-    {
-        this.userLvl="1";
-        this.userGold="10";
+    @ManyToMany(fetch = FetchType.EAGER)
+    private Set<AppUserRole> appUserRole = new HashSet<AppUserRole>(0);
+
+    public Set<AppUserRole> getAppUserRole() {
+        return appUserRole;
     }
 
-    @Column(name="email")
+    public void setAppUserRole(Set<AppUserRole> appUserRole) {
+        this.appUserRole = appUserRole;
+    }
+
+    public AppUser() {
+        this.userLvl = "1";
+        this.userGold = "10";
+    }
+
+    @Column(name = "email")
     private String email;
 
 
@@ -64,7 +77,6 @@ public class AppUser {
 
     @ManyToMany(fetch = FetchType.EAGER)
     private List<Item> userItems = new ArrayList<>(0);
-
 
 
     public long getId() {
