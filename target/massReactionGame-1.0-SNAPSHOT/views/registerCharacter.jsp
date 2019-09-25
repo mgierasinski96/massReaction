@@ -103,7 +103,9 @@
                     <div class="classInput"><img src="/resources/character/leftArrow.png" id="leftArrow"><span
                             id="currentClass">Czarodziej</span><img src="/resources/character/rightArrow.png"
                                                                     id="rightArrow"></div>
-                    <input type="submit" class="butn" value="Zarejestruj">
+                    <div id="divForRegisterButton">
+                    <input type="submit" class="btn3d" value="Zarejestruj">
+                    </div>
 
 
                 </div>
