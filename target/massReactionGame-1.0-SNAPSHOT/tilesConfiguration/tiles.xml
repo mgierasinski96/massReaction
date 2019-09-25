@@ -34,6 +34,11 @@
         <put-attribute name="body" value="/views/registerCharacter.jsp" />
     </definition>
 
+    <definition name="loginPage" extends="base.definition">
+        <put-attribute name="title" value="LoginPage" />
+        <put-attribute name="body" value="/views/loginPage.jsp" />
+    </definition>
+
  
 </tiles-definitions>
 

@@ -8,223 +8,23 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../resources/css/registrationAndLogin.css">
+    <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash&display=swap" rel="stylesheet">
+    <title>Zarejestruj nową postać!</title>
 </head>
-<style>
-    #container {
-        position: relative;
-        border: 3px solid black;
-    }
 
-    #registerForm {
-        border: 3px solid white;
-        position: absolute;
-        margin-top: 10px;
-        height: 730px;
-        width: 1320px;
-        background-image: url("/resources/backgrounds/registerCharacterBackground.jpg");
-        left: 50%;
-        margin-left: -660px;
-
-    }
-
-    #contentOfRegisterForm {
-        position: relative;
-        width: 100%;
-        height: 100%;
-    }
-
-    #stats {
-        width: 42%;
-        height: 62%;
-        position: absolute;
-        top: 15%;
-        left: 8%;
-    }
-
-    #insideStats {
-        position: relative;
-        width: 100%;
-        height: 100%;
-    }
-
-    #choseCharacter {
-        position: absolute;
-        top: 0%;
-        left: 100%;
-        width: 256px;
-        height: 306px;
-        border: 3px solid darkred;
-        background: rgb(216, 218, 227);
-        background: radial-gradient(circle, rgba(216, 218, 227, 0.927608543417367) 51%, rgba(198, 154, 107, 0) 93%);
-    }
-
-    input[type="text"], input[type="password"], textarea {
-
-        background-color: yellow;
-
-    }
-
-    .statsInput {
-
-        color: darkred;
-        text-align: center;
-        font-weight: bold;
-        width: 60px;
-        height: 40px;
-        font-size: 35px;
-        border: 1px solid darkred;
-    }
-
-    .nicknameInput, .emailInput, .passwordInput, .classInput {
-        font-family: 'Berkshire Swash', cursive;
-        font-weight: bold;
-        color: darkred;
-        height: 40px;
-        font-size: 35px;
-    }
-
-
-    .statImage {
-        border: 1px solid darkred;
-    }
-
-    .statInfo {
-        font-family: 'Berkshire Swash', cursive;
-        font-size: 25px;
-        color: darkred;
-    }
-
-    .pointsLeft {
-        font-family: 'Berkshire Swash', cursive;
-        font-size: 35px;
-        width: 50px;
-        color: darkred;
-        text-align: center;
-    }
-
-    .butn {
-        position: absolute;
-        bottom:0%;
-        -webkit-border-radius: 28px;
-        -moz-border-radius: 28px;
-        border-radius: 28px;
-        font-family: 'Berkshire Swash', cursive;
-        color: darkred;
-        font-size: 35px;
-        background: yellow;
-        padding: 10px 20px 10px 20px;
-        border: solid darkred 4px;
-        text-decoration: none;
-    }
-
-    .classInput {
-        position: absolute;
-        top: 325px;
-        left: 100%;
-        width: 256px;
-        text-align: center;
-    }
-
-    .butn:hover {
-        background: #fca63c;
-        text-decoration: none;
-        cursor: pointer;
-    }
-
-    #description {
-
-        position: absolute;
-        top: 15%;
-        right: 3%;
-        height: 365px;
-        width: 350px;
-        background-image: url("/resources/character/pergamin.png");
-    }
-
-    #insidePergamin {
-        width: 100%;
-        height: 100%;
-        position: relative;
-    }
-
-    #shape18 {
-        display: inline-block !important;
-        width: 210px;
-        height: 250px;
-        transform: skew(-24deg);
-        position: absolute;
-        left: 17%;
-        top: 19%;
-        font-size: 16px;
-        font-family: 'Berkshire Swash', cursive;
-        color: darkred;
-        text-align: left;
-
-    }
-
-    #rightArrow:hover, #leftArrow:hover {
-        cursor: pointer;
-        opacity: 0.6;
-    }
-
-    #increaseStrength:hover, #increaseWisdom:hover, #increaseHealth:hover, #decreaseStrength:hover, #decreaseWisdom:hover, #decreaseHealth:hover {
-        cursor: pointer;
-        transition: 0.4s;
-        opacity: 0.5;
-    }
-
-    #imageHolder {
-        width: 100%;
-        height: 100%;
-        position: relative;
-    }
-
-    .actual {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        transition: 1.2s;
-        opacity: 1;
-    }
-
-    .next {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        transition: 1.2s;
-        opacity: 0;
-    }
-
-    #statsTable
-    {
-        position: absolute;
-        top:50%;
-    }
-    #statsCalculation
-    {
-        position: absolute;
-        top:50%;
-        left:50%;
-
-    }
-
-
-
-</style>
 <body>
 <script>window.jQuery || document.write('<script src="/resources/js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
 <script src="/resources/js/plugins.js"></script>
 <!-- Add your site or application content here -->
-<script src="/resources/js/registrationScript.js" async></script>
+<script src="/resources/js/registrationAndLoginScript.js" async></script>
 <script src="/resources/js/vendor/modernizr-3.7.1.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://www.google-analytics.com/analytics.js" async></script>
 <div id="container">
-    <div id="registerForm">
-        <div id="contentOfRegisterForm">
-
+    <div id="backgroundMap">
+        <div id="relativeContentOfPage">
             <div id="stats">
                 <div id="insideStats">
                     <table>
@@ -278,15 +78,18 @@
                     <table id="statsCalculation" border="1px">
                         <tr>
                             <td id="strengthInfo" class="statInfo">Blok</td>
-                            <td><input class="statsInput" type="text" id="strengthStatValue" value="1%" style="width:100px" readonly /></td>
+                            <td><input class="statsInput" type="text" id="strengthStatValue" value="1%"
+                                       style="width:100px" readonly/></td>
                         </tr>
                         <tr>
                             <td id="wisdomInfo" class="statInfo">Obrażenia</td>
-                            <td><input type="text" class="statsInput" id="wisdomStatValue" value="25" style="width:100px" readonly/></td>
+                            <td><input type="text" class="statsInput" id="wisdomStatValue" value="25"
+                                       style="width:100px" readonly/></td>
                         </tr>
                         <tr>
                             <td id="healthInfo" class="statInfo">Zdrowie</td>
-                            <td><input type="text" class="statsInput" value="4.5" id="healthStatValue" style="width:100px" readonly/></td>
+                            <td><input type="text" class="statsInput" value="4.5" id="healthStatValue"
+                                       style="width:100px" readonly/></td>
                         </tr>
 
 

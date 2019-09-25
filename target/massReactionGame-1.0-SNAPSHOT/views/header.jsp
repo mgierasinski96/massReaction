@@ -90,7 +90,7 @@
     <div id="logo"><a href="/.html"><img src="/resources/backgrounds/logo.png"></a></div>
     <div id="wikingHead"></div>
     <ul class="textContent">
-        <li><a href="#">Zaloguj</a></li>
+        <li><a href="/loginForm">Zaloguj</a></li>
         <li><a href="/register">Zarejestruj</a></li>
     </ul>
     <%--<div class="textContent">This is new font</div>--%>
