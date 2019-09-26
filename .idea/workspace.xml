@@ -7,9 +7,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="046d5518-9329-49bb-8c33-ae94193df745" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/registrationAndLogin.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/registrationAndLogin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mgierasinski/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mgierasinski/config/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mgierasinski/controller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mgierasinski/controller/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mgierasinski/dao/AppUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mgierasinski/dao/AppUserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mgierasinski/domain/AppUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mgierasinski/domain/AppUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mgierasinski/service/AppUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mgierasinski/service/AppUserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/header.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/loginPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/loginPage.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/registerCharacter.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/registerCharacter.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mgierasinski/config/SecurityConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mgierasinski/config/SecurityConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mgierasinski/controller/registerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mgierasinski/controller/registerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mgierasinski/dao/AppUserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mgierasinski/dao/AppUserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mgierasinski/domain/AppUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mgierasinski/domain/AppUser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mgierasinski/service/AppUserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mgierasinski/service/AppUserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/config/SecurityConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/config/SecurityConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/controller/registerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/controller/registerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/dao/AppUserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/dao/AppUserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/domain/AppUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/domain/AppUser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/service/AppUserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/service/AppUserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/views/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/views/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/views/loginPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/views/loginPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/views/registerCharacter.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/views/registerCharacter.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -22,86 +41,34 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/domain/Profession.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/controller/RegisterController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+            <state relative-caret-position="220">
+              <caret line="53" selection-start-line="53" selection-end-line="53" />
               <folding>
-                <element signature="e#658#659#0" expanded="true" />
-                <element signature="e#693#694#0" expanded="true" />
-                <element signature="e#747#748#0" expanded="true" />
-                <element signature="e#795#796#0" expanded="true" />
-                <element signature="e#839#840#0" expanded="true" />
-                <element signature="e#879#880#0" expanded="true" />
-                <element signature="e#945#946#0" expanded="true" />
-                <element signature="e#1003#1004#0" expanded="true" />
-                <element signature="e#1044#1045#0" expanded="true" />
-                <element signature="e#1081#1082#0" expanded="true" />
-                <element signature="e#1141#1142#0" expanded="true" />
-                <element signature="e#1193#1194#0" expanded="true" />
-                <element signature="e#1234#1235#0" expanded="true" />
-                <element signature="e#1271#1272#0" expanded="true" />
-                <element signature="e#1331#1332#0" expanded="true" />
-                <element signature="e#1383#1384#0" expanded="true" />
-                <element signature="e#1423#1424#0" expanded="true" />
-                <element signature="e#1459#1460#0" expanded="true" />
-                <element signature="e#1517#1518#0" expanded="true" />
-                <element signature="e#1567#1568#0" expanded="true" />
-                <element signature="e#1610#1611#0" expanded="true" />
-                <element signature="e#1649#1650#0" expanded="true" />
-                <element signature="e#1713#1714#0" expanded="true" />
-                <element signature="e#1769#1770#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/loginPage.jsp">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/controller/AdviceController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="109" column="87" selection-start-line="109" selection-start-column="87" selection-end-line="109" selection-end-column="87" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/main.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/mainBody.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/controller/LoginController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="149">
+              <caret line="18" column="29" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#274#275#0" expanded="true" />
-                <element signature="e#298#299#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/registrationAndLogin.css">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/header.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="131" column="1" selection-start-line="131" selection-start-column="1" selection-end-line="131" selection-end-column="1" />
+            <state relative-caret-position="336">
+              <caret line="66" column="29" lean-forward="true" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -109,35 +76,81 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/views/registerCharacter.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="12" column="43" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
+            <state relative-caret-position="67">
+              <caret line="80" column="62" selection-start-line="80" selection-start-column="45" selection-end-line="80" selection-end-column="62" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/tilesConfiguration/tiles.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="31" column="50" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/header.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="73" column="10" selection-start-line="73" selection-start-column="10" selection-end-line="75" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/service/MyAppUserDetailsService.java">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/loginPage.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret line="15" column="39" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+              <caret selection-end-line="4" selection-end-column="76" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/domain/AppUser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="36" column="30" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1736#1737#0" expanded="true" />
+                <element signature="e#1765#1766#0" expanded="true" />
+                <element signature="e#1807#1808#0" expanded="true" />
+                <element signature="e#1843#1844#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/service/AppUserRoleService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/service/AppUserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/service/AppUserServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="682">
+              <caret line="45" column="46" selection-start-line="45" selection-start-column="46" selection-end-line="45" selection-end-column="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1078#1079#0" expanded="true" />
+                <element signature="e#1128#1129#0" expanded="true" />
+                <element signature="e#1184#1185#0" expanded="true" />
+                <element signature="e#1228#1229#0" expanded="true" />
+                <element signature="e#1284#1285#0" expanded="true" />
+                <element signature="e#1337#1338#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/dao/AppUserRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="121">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -160,7 +173,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>stren</find>
       <find>czarodziej</find>
       <find>character</find>
       <find>choseCharacter</find>
@@ -190,6 +202,7 @@
       <find>white</find>
       <find>black</find>
       <find>statInfo</find>
+      <find>textC</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -231,21 +244,23 @@
         <option value="$PROJECT_DIR$/src/main/java/mgierasinski/service/ProfessionServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/mgierasinski/domain/Item.java" />
         <option value="$PROJECT_DIR$/src/main/java/mgierasinski/domain/Profession.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mgierasinski/dao/AppUserRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mgierasinski/service/AppUserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/mgierasinski/service/MyAppUserDetailsService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mgierasinski/config/SecurityConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/mgierasinski/config/SecurityWebApplicationInitializer.java" />
         <option value="$PROJECT_DIR$/src/main/java/mgierasinski/config/Spring5Init.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mgierasinski/domain/AppUser.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/css/registration.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/tilesConfiguration/tiles.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/views/header.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/mgierasinski/controller/registerController.java" />
         <option value="$PROJECT_DIR$/src/main/java/mgierasinski/controller/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/views/loginPage.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/views/registerCharacter.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/css/registrationAndLogin.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/loginPage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/mgierasinski/config/SecurityConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mgierasinski/dao/AppUserRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mgierasinski/service/AppUserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mgierasinski/domain/AppUser.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/registerCharacter.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/mgierasinski/controller/RegisterController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mgierasinski/controller/AdviceController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/header.jsp" />
       </list>
     </option>
   </component>
@@ -453,7 +468,7 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1569438182644" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1569508546708" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -466,11 +481,11 @@
       <recent name="C:\Users\Mateusz\Desktop\massReactionProject\src\main\java\mgierasinski\config\config" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="mgierasinski.controller" />
       <recent name="mgierasinski.service" />
       <recent name="mgierasinski.domain" />
       <recent name="mgierasinski.dao" />
       <recent name="mgierasinski.config.config" />
-      <recent name="mgierasinski.config" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Mateusz\Desktop\massReactionProject\src\main\webapp\resources\pageElements" />
@@ -645,12 +660,12 @@
       <workItem from="1569167793599" duration="29876000" />
       <workItem from="1569349209059" duration="1192000" />
       <workItem from="1569350494035" duration="15946000" />
-      <workItem from="1569422011529" duration="12955000" />
+      <workItem from="1569422011529" duration="24765000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69258000" />
+    <option name="totallyTimeSpent" value="81068000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -666,7 +681,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.39443535" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49848714" visible="true" weight="0.39443535" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -674,7 +689,7 @@
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50075644" side_tool="true" weight="0.39443535" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5015129" side_tool="true" weight="0.39443535" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Version Control" order="13" />
@@ -699,8 +714,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/webapp/views/main.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/webapp/views/layout.jsp" />
     <entry file="file://$PROJECT_DIR$/src/main/java/webapp/tiles/tiles.xml" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backgrounds/logo.png">
       <provider selected="true" editor-type-id="images" />
@@ -828,46 +841,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/dao/AppUserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/service/AppUserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/service/AppUserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="68" column="28" selection-start-line="68" selection-start-column="28" selection-end-line="68" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1078#1079#0" expanded="true" />
-            <element signature="e#1128#1129#0" expanded="true" />
-            <element signature="e#1184#1185#0" expanded="true" />
-            <element signature="e#1228#1229#0" expanded="true" />
-            <element signature="e#1284#1285#0" expanded="true" />
-            <element signature="e#1341#1342#0" expanded="true" />
-            <element signature="e#1403#1404#0" expanded="true" />
-            <element signature="e#1462#1463#0" expanded="true" />
-            <element signature="e#1524#1525#0" expanded="true" />
-            <element signature="e#1583#1584#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/dao/AppUserRoleRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -875,37 +848,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/service/AppUserRoleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/service/AppUserRoleServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/config/SecurityConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -923,20 +869,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/config/SecurityWebApplicationInitializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/config/Spring5Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/config/Spring5Init.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -948,16 +880,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="11" column="16" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/domain/AppUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1011,27 +933,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/controller/RegisterController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/tilesConfiguration/tiles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="149">
           <caret line="31" column="50" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/header.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="73" column="10" selection-start-line="73" selection-start-column="10" selection-end-line="75" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -1062,13 +967,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/loginPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="109" column="87" selection-start-line="109" selection-start-column="87" selection-end-line="109" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/controller/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1081,17 +979,149 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/registerCharacter.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/registrationAndLogin.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="12" column="43" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
+        <state relative-caret-position="226">
+          <caret line="129" column="23" lean-forward="true" selection-start-line="129" selection-start-column="23" selection-end-line="129" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/registrationAndLogin.css">
+    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/controller/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="131" column="1" selection-start-line="131" selection-start-column="1" selection-end-line="131" selection-end-column="1" />
+        <state relative-caret-position="170">
+          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/controller/SpringSecurityCustomPagesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/config/Spring5Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-936">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/config/SecurityWebApplicationInitializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/config/SecurityConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="53" column="53" selection-start-line="53" selection-start-column="53" selection-end-line="53" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/dao/AppUserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/service/AppUserRoleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/service/AppUserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/service/AppUserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="45" column="46" selection-start-line="45" selection-start-column="46" selection-end-line="45" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1078#1079#0" expanded="true" />
+            <element signature="e#1128#1129#0" expanded="true" />
+            <element signature="e#1184#1185#0" expanded="true" />
+            <element signature="e#1228#1229#0" expanded="true" />
+            <element signature="e#1284#1285#0" expanded="true" />
+            <element signature="e#1337#1338#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/loginPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="4" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/domain/AppUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="36" column="30" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1736#1737#0" expanded="true" />
+            <element signature="e#1765#1766#0" expanded="true" />
+            <element signature="e#1807#1808#0" expanded="true" />
+            <element signature="e#1843#1844#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/registerCharacter.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="80" column="62" selection-start-line="80" selection-start-column="45" selection-end-line="80" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/controller/RegisterController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/controller/AdviceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="18" column="29" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/header.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="66" column="29" lean-forward="true" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
         </state>
       </provider>
     </entry>

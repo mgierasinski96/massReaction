@@ -11,7 +11,7 @@ import javax.transaction.Transactional;
 public interface AppUserRepository extends JpaRepository<AppUser, Long> {
 
     AppUser findByEmail(String email);
-    AppUser findById(long id);
+    AppUser findByUserId(long id);
     AppUser findByLogin(String login);
 }
 

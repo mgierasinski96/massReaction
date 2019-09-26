@@ -16,7 +16,7 @@ public class AppUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "userId")
-    private long id;
+    private long userId;
 
     @Column(name = "userLvl")
     private String userLvl;
@@ -78,13 +78,12 @@ public class AppUser {
     @ManyToMany(fetch = FetchType.EAGER)
     private List<Item> userItems = new ArrayList<>(0);
 
-
-    public long getId() {
-        return id;
+    public long getUserId() {
+        return userId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 
     public String getUserLvl() {

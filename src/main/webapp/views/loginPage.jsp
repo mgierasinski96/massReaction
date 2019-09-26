@@ -2,8 +2,9 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
 <%@taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
+
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -97,20 +98,23 @@
             <div id="backgroundOfLoginForm">
                 <div id="relativeContentOfLoginForm">
                     <div id="contentOfLoginForm">
+
+         <form class="form-signin" name='loginForm' action="<c:url value='/login' />" method='POST'>
         <table id="loginTable" >
             <tr class="trPaddingBottom">
                 <td class="loginInfo">Nazwa postaci:</td>
-                <td><input type="text" class="loginInput"></td>
+                <td><input type="text" class="loginInput" id="inputEmail" name="login" required autofocus></td>
             </tr>
             <tr class="trPaddingBottom">
                 <td class="loginInfo">Hasło:</td>
-                <td><input type="password" class="loginInput"></td>
+                <td><input type="password" class="loginInput" id="inputPassword" name="password" required></td>
             </tr>
                 <tr class="trPaddingBottom">
-                    <td class="forButton" colspan="2"><input type="submit" class="btn3d" value="Zaloguj"></td>
+                    <td class="forButton" colspan="2"><button type="submit" class="btn3d" value="Zaloguj">Zaloguj</button></td>
                 </tr>
-
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         </table>
+         </form>
                     </div>
 
             </div>

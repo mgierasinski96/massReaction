@@ -51,7 +51,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and().formLogin().loginPage("/login").permitAll() // with custom login page
                 .usernameParameter("login").passwordParameter("password")
                 .failureForwardUrl("/login.html?error")
-                .and().logout().logoutSuccessUrl("/login.html?logout")
+                .and().logout().logoutSuccessUrl("/")
                 .and().exceptionHandling().accessDeniedPage("/accessDenied");
 
     }

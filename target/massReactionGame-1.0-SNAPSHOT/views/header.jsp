@@ -1,10 +1,9 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Mateusz
-  Date: 22.09.2019
-  Time: 15:54
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -53,6 +52,38 @@
 
 
         }
+        .logouttextContent
+        {
+            font-family: 'Berkshire Swash', cursive;
+            font-size: 40px;
+            width: 170px;
+            padding: 5px;
+            text-decoration: none;
+            background: -webkit-linear-gradient(yellow, red);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: absolute;
+            margin-top: 70px;
+            margin-left: 73%;
+            font-style: italic;
+        }
+
+        #infoAboutUser
+        {
+            position: absolute;
+            font-family: 'Berkshire Swash', cursive;
+            font-size: 40px;
+            margin-top: 20px;
+            margin-left: 2%;
+            height: 40px;
+            text-decoration: none;
+            background: -webkit-linear-gradient(yellow, red);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+
+
 
         .textContent ul
         {
@@ -88,11 +119,39 @@
 <body>
 <div id="container">
     <div id="logo"><a href="/.html"><img src="/resources/backgrounds/logo.png"></a></div>
+    <c:if test="${pageContext.request.userPrincipal.name == null}">
     <div id="wikingHead"></div>
     <ul class="textContent">
         <li><a href="/loginForm">Zaloguj</a></li>
         <li><a href="/register">Zarejestruj</a></li>
     </ul>
+</c:if>
+
+    <c:if test="${pageContext.request.userPrincipal.name != null}">
+        <div id="infoAboutUser">
+            <table>
+                <tr>
+                    <td><img src="/resources/pageElements/goldIcon40x40.png"></td>
+                    <td>${userGold}</td>
+                </tr>
+            </table>
+        </div>
+
+        <script>
+            function formSubmit() {
+                document.getElementById("logoutForm").submit();
+            }
+        </script>
+
+        <!-- csrf for log out-->
+        <form action="/logout" method="post" id="logoutForm">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        </form>
+
+        <div class="logouttextContent">
+            <a href="javascript:formSubmit()">Wyloguj</a>
+        </div>
+    </c:if>
     <%--<div class="textContent">This is new font</div>--%>
 </div>
 

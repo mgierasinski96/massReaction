@@ -1,11 +1,9 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Mateusz
-  Date: 23.09.2019
-  Time: 12:30
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
+
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="../resources/css/registrationAndLogin.css">
@@ -25,23 +23,25 @@
 <div id="container">
     <div id="backgroundMap">
         <div id="relativeContentOfPage">
+<form:form method="post" action="addAppUser.html" modelAttribute="appUser">
+    <form:hidden path="userId"/>
             <div id="stats">
                 <div id="insideStats">
                     <table>
                         <tr>
                             <td><span class="nicknameInput">Nazwa postaci:</span></td>
-                            <td><input class="nicknameInput" type="text" size="15" maxlength="15"
-                                       placeholder="Wpisz nazwę..." name="nickname"></td>
+                            <td><form:input class="nicknameInput" type="text" size="15" maxlength="15"
+                                       placeholder="Wpisz nazwę..." name="nickname" path="login"/></td>
                         </tr>
                         <tr>
                             <td><span class="emailInput">Adres email:</span></td>
-                            <td><input class="emailInput" type="text" size="15" maxlength="20" placeholder="Email..."
-                                       name="email"></td>
+                            <td><form:input path="email" class="emailInput" type="text" size="15" maxlength="20" placeholder="Email..."
+                                       name="email"/></td>
                         </tr>
                         <tr>
                             <td><span class="passwordInput">Hasło:</span></td>
-                            <td><input class="passwordInput" type="password" size="15" placeholder="****" maxlength="20"
-                                       name="password"></td>
+                            <td><form:input path="password" class="passwordInput" type="password" size="15" placeholder="****" maxlength="20"
+                                       name="password"/></td>
                         </tr>
 
                     </table>
@@ -54,7 +54,7 @@
                             <td class="statInfo">Siła</td>
                             <td><img class="statImage" id="decreaseStrength"
                                      src="../resources/character/minusStats.png"></td>
-                            <td><input class="statsInput" type="text" value="2" id="strength" readonly/></td>
+                            <td><input name="userStrength" class="statsInput" type="text" value="2" id="strength" readonly/></td>
                             <td><img class="statImage" id="increaseStrength" src="../resources/character/plusStats.png">
                             </td>
                         </tr>
@@ -62,7 +62,7 @@
                             <td class="statInfo">Mądrość</td>
                             <td><img class="statImage" id="decreaseWisdom" src="../resources/character/minusStats.png">
                             </td>
-                            <td><input class="statsInput" type="text" value="10" id="wisdom" readonly/></td>
+                            <td><input name="userWisdom" class="statsInput" type="text" value="10" id="wisdom" readonly/></td>
                             <td><img class="statImage" id="increaseWisdom" src="../resources/character/plusStats.png">
                             </td>
                         </tr>
@@ -70,7 +70,7 @@
                             <td class="statInfo">Zdrowie</td>
                             <td><img class="statImage" id="decreaseHealth" src="../resources/character/minusStats.png">
                             </td>
-                            <td><input class="statsInput" type="text" value="3" id="health" readonly/></td>
+                            <td><input name="userHP" class="statsInput" type="text" value="3" id="health" readonly/></td>
                             <td><img class="statImage" id="increaseHealth" src="../resources/character/plusStats.png">
                             </td>
                         </tr>
@@ -78,17 +78,17 @@
                     <table id="statsCalculation" border="1px">
                         <tr>
                             <td id="strengthInfo" class="statInfo">Blok</td>
-                            <td><input class="statsInput" type="text" id="strengthStatValue" value="1%"
+                            <td><input name="strengthValueCalc" class="statsInput" type="text" id="strengthStatValue" value="1%"
                                        style="width:100px" readonly/></td>
                         </tr>
                         <tr>
                             <td id="wisdomInfo" class="statInfo">Obrażenia</td>
-                            <td><input type="text" class="statsInput" id="wisdomStatValue" value="25"
+                            <td><input name="wisdomValueCalc" type="text" class="statsInput" id="wisdomStatValue" value="25"
                                        style="width:100px" readonly/></td>
                         </tr>
                         <tr>
                             <td id="healthInfo" class="statInfo">Zdrowie</td>
-                            <td><input type="text" class="statsInput" value="4.5" id="healthStatValue"
+                            <td><input name="userTotalHP" type="text" class="statsInput" value="4.5" id="healthStatValue"
                                        style="width:100px" readonly/></td>
                         </tr>
 
@@ -111,6 +111,7 @@
                 </div>
 
             </div><!-- stats -->
+</form:form>
 
             <div id="description">
                 <div id="insidePergamin">

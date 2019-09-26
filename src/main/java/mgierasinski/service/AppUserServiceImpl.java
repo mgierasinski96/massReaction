@@ -43,7 +43,7 @@ public class AppUserServiceImpl implements AppUserService{
 
     @Override
     public AppUser getAppUser(long id) {
-        return appUserRepository.findById(id);
+        return appUserRepository.findByUserId(id);
     }
 
     @Override
