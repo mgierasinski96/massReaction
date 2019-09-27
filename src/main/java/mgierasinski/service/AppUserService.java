@@ -19,6 +19,8 @@ public interface AppUserService {
     AppUser getAppUser(long id);
     AppUser findByLogin(String login);
     AppUser findByEmail(String email);
+
+    void lvlAdvanced(long newLevel,long userId);
   //  void activateAppUser(mgierasinski.domain.AppUser appUser);
 
 }

@@ -72,10 +72,10 @@
         {
             position: absolute;
             font-family: 'Berkshire Swash', cursive;
-            font-size: 40px;
-            margin-top: 20px;
+            font-size: 30px;
+            margin-top: 5px;
             margin-left: 2%;
-            height: 40px;
+            height: 150px;
             text-decoration: none;
             background: -webkit-linear-gradient(yellow, red);
             -webkit-background-clip: text;
@@ -114,6 +114,35 @@
             opacity:0.7;
         }
 
+        .td40px
+              {
+            height: 40px;
+              }
+
+        #greenRectangle
+        {
+            position: absolute;
+            height: 40px;
+            z-index: -1;
+            width: 110px;
+            opacity:0.12;
+            background: lime;
+            top:90px;
+            left:96px;
+        }
+        #borderForRectangle
+        {
+            position: absolute;
+            height: 42px;
+            z-index: -1;
+            width: 112px;
+            border:2px solid black;
+            opacity:0.5;
+            top:88px;
+            left:94px;
+        }
+
+
     </style>
 </head>
 <body>
@@ -131,8 +160,16 @@
         <div id="infoAboutUser">
             <table>
                 <tr>
-                    <td><img src="/resources/pageElements/goldIcon40x40.png"></td>
-                    <td>${userGold}</td>
+                    <td class="td40px"><img src="/resources/pageElements/goldIcon40x40.png"></td>
+                    <td class="td40px">&nbsp;<b>${userGold}</b></td>
+                </tr>
+                <tr>
+                    <td class="td40px">Lvl:</td>
+                    <td class="td40px">&nbsp;<b>${userLvl}</b></td>
+                </tr>
+                <tr>
+                    <td class="td40px">Exp:</td>
+                    <td class="td40px">&nbsp;${userExp}/${expToNextLvl}</td>
                 </tr>
             </table>
         </div>
@@ -151,6 +188,8 @@
         <div class="logouttextContent">
             <a href="javascript:formSubmit()">Wyloguj</a>
         </div>
+        <div id="borderForRectangle"></div>
+        <div id="greenRectangle"></div>
     </c:if>
     <%--<div class="textContent">This is new font</div>--%>
 </div>

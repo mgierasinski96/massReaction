@@ -19,32 +19,37 @@ public class AppUser {
     private long userId;
 
     @Column(name = "userLvl")
-    private String userLvl;
+    private long userLvl;
 
     @Column(name = "userGold")
-    private String userGold;
+    private long userGold;
 
     @Column(name = "userWisdom")
-    private String userWisdom;
+    private long userWisdom;
 
     @Column(name = "userStrength")
-    private String userStrength;
+    private long userStrength;
 
     @Column(name = "userHP")
-    private String userHP;
+    private long userHP;
 
     @Column(name = "userTotalHP")
-    private String userTotalHP;
+    private double userTotalHP;
 
     @Column(name = "userTotalDmg")
-    private String userTotalDmg;
+    private double userTotalDmg;
 
     @Column(name = "userTotalDodge")
-    private String userTotalDodge;
+    private double userTotalDodge;
 
     @ManyToOne
     @JoinColumn(name = "userProfession")
     private Profession userProfession;
+
+    @Column(name="userTotalExp")
+    private long userTotalExp;
+
+
 
 
     @ManyToMany(fetch = FetchType.EAGER)
@@ -56,11 +61,6 @@ public class AppUser {
 
     public void setAppUserRole(Set<AppUserRole> appUserRole) {
         this.appUserRole = appUserRole;
-    }
-
-    public AppUser() {
-        this.userLvl = "1";
-        this.userGold = "10";
     }
 
     @Column(name = "email")
@@ -75,6 +75,15 @@ public class AppUser {
     @Column(name = "password")
     private String password;
 
+    public AppUser() {
+        this.userLvl = 1;
+        this.userGold = 10;
+        this.userTotalExp=0;
+    }
+
+
+
+
     @ManyToMany(fetch = FetchType.EAGER)
     private List<Item> userItems = new ArrayList<>(0);
 
@@ -86,68 +95,76 @@ public class AppUser {
         this.userId = userId;
     }
 
-    public String getUserLvl() {
+    public long getUserLvl() {
         return userLvl;
     }
 
-    public void setUserLvl(String userLvl) {
+    public void setUserLvl(long userLvl) {
         this.userLvl = userLvl;
     }
 
-    public String getUserGold() {
+    public long getUserGold() {
         return userGold;
     }
 
-    public void setUserGold(String userGold) {
+    public void setUserGold(long userGold) {
         this.userGold = userGold;
     }
 
-    public String getUserWisdom() {
+    public long getUserWisdom() {
         return userWisdom;
     }
 
-    public void setUserWisdom(String userWisdom) {
+    public void setUserWisdom(long userWisdom) {
         this.userWisdom = userWisdom;
     }
 
-    public String getUserStrength() {
+    public long getUserStrength() {
         return userStrength;
     }
 
-    public void setUserStrength(String userStrength) {
+    public void setUserStrength(long userStrength) {
         this.userStrength = userStrength;
     }
 
-    public String getUserHP() {
+    public long getUserHP() {
         return userHP;
     }
 
-    public void setUserHP(String userHP) {
+    public void setUserHP(long userHP) {
         this.userHP = userHP;
     }
 
-    public String getUserTotalHP() {
+    public double getUserTotalHP() {
         return userTotalHP;
     }
 
-    public void setUserTotalHP(String userTotalHP) {
+    public void setUserTotalHP(double userTotalHP) {
         this.userTotalHP = userTotalHP;
     }
 
-    public String getUserTotalDmg() {
+    public double getUserTotalDmg() {
         return userTotalDmg;
     }
 
-    public void setUserTotalDmg(String userTotalDmg) {
+    public void setUserTotalDmg(double userTotalDmg) {
         this.userTotalDmg = userTotalDmg;
     }
 
-    public String getUserTotalDodge() {
+    public double getUserTotalDodge() {
         return userTotalDodge;
     }
 
-    public void setUserTotalDodge(String userTotalDodge) {
+    public void setUserTotalDodge(double userTotalDodge) {
         this.userTotalDodge = userTotalDodge;
+    }
+
+    public long getUserTotalExp() {
+        return userTotalExp;
+    }
+
+    public void setUserTotalExp(long userTotalExp) {
+        this.userTotalExp = userTotalExp;
     }
 
     public Profession getUserProfession() {

@@ -1,6 +1,7 @@
 package mgierasinski.service;
 
 import mgierasinski.dao.AppUserRepository;
+import mgierasinski.dao.AppUserRoleRepository;
 import mgierasinski.domain.AppUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Modifying;
@@ -16,10 +17,14 @@ public class AppUserServiceImpl implements AppUserService{
     @Autowired
     AppUserRepository appUserRepository;
 
+    @Autowired
+    AppUserRoleRepository appUserRoleRepository;
+
+
 
     @Override
     public void addAppUser(AppUser appUser) {
-        //appUser.getAppUserRole().add(appUserRoleRepository.findByRole("ROLE_USER"));//przypisz role user
+        appUser.getAppUserRole().add(appUserRoleRepository.findByRole("ROLE_USER"));//przypisz role user
         appUser.setPassword(hashPassword(appUser.getPassword()));
         appUserRepository.save(appUser);
     }
@@ -54,6 +59,12 @@ public class AppUserServiceImpl implements AppUserService{
     @Override
     public AppUser findByEmail(String email) {
         return appUserRepository.findByEmail(email);
+    }
+
+    @Override
+    public void lvlAdvanced(long newLevel, long userId) {
+        appUserRepository.lvlAdvanced(newLevel,userId);
+
     }
 
     private String hashPassword(String password) {

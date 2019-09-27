@@ -19,13 +19,13 @@ public class Profession {
     private String professionName;
 
     @Column(name="dmgCalculation")
-    private  String dmgCalculation;
+    private  double dmgCalculation;
 
     @Column(name="hpCalculation")
-    private String hpCalculation;
+    private double hpCalculation;
 
     @Column(name="dodgeCalculation")
-    private String dodgeCalculation;
+    private double dodgeCalculation;
 
 
     public long getProfessionId() {
@@ -52,27 +52,27 @@ public class Profession {
         this.professionName = professionName;
     }
 
-    public String getDmgCalculation() {
+    public double getDmgCalculation() {
         return dmgCalculation;
     }
 
-    public void setDmgCalculation(String dmgCalculation) {
+    public void setDmgCalculation(double dmgCalculation) {
         this.dmgCalculation = dmgCalculation;
     }
 
-    public String getHpCalculation() {
+    public double getHpCalculation() {
         return hpCalculation;
     }
 
-    public void setHpCalculation(String hpCalculation) {
+    public void setHpCalculation(double hpCalculation) {
         this.hpCalculation = hpCalculation;
     }
 
-    public String getDodgeCalculation() {
+    public double getDodgeCalculation() {
         return dodgeCalculation;
     }
 
-    public void setDodgeCalculation(String dodgeCalculation) {
+    public void setDodgeCalculation(double dodgeCalculation) {
         this.dodgeCalculation = dodgeCalculation;
     }
 }

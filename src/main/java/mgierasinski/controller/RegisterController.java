@@ -45,21 +45,20 @@ public class RegisterController {
                 System.out.println(wisdomValueCalc);
                 if(wisdomValueCalc.indexOf("%")==-1)
                 {
-                    System.out.println(strengthValueCalc.indexOf("%"));
                     Profession mag=professionService.findByProfessionName("Czarodziej");
                     appUser.setUserProfession(mag);
-                    appUser.setUserTotalDmg(wisdomValueCalc);
+                    appUser.setUserTotalDmg(Double.parseDouble(wisdomValueCalc));
                     String dodge=strengthValueCalc.substring(0,strengthValueCalc.indexOf("%"));
-                    appUser.setUserTotalDodge(dodge);
+                    appUser.setUserTotalDodge(Double.parseDouble(dodge));
 
                 }
                 else
                 {
                     Profession wojownik=professionService.findByProfessionName("Wojownik");
                     appUser.setUserProfession(wojownik);
-                    appUser.setUserTotalDmg(strengthValueCalc);
+                    appUser.setUserTotalDmg(Double.parseDouble(strengthValueCalc));
                     String dodge=wisdomValueCalc.substring(0,wisdomValueCalc.indexOf("%"));
-                    appUser.setUserTotalDodge(dodge);
+                    appUser.setUserTotalDodge(Double.parseDouble(dodge));
                 }
 
                 appUserService.addAppUser(appUser);
