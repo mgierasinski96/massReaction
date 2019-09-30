@@ -119,28 +119,6 @@
             height: 40px;
               }
 
-        #greenRectangle
-        {
-            position: absolute;
-            height: 40px;
-            z-index: -1;
-            width: 110px;
-            opacity:0.12;
-            background: lime;
-            top:90px;
-            left:96px;
-        }
-        #borderForRectangle
-        {
-            position: absolute;
-            height: 42px;
-            z-index: -1;
-            width: 112px;
-            border:2px solid black;
-            opacity:0.5;
-            top:88px;
-            left:94px;
-        }
 
 
     </style>
@@ -169,7 +147,7 @@
                 </tr>
                 <tr>
                     <td class="td40px">Exp:</td>
-                    <td class="td40px">&nbsp;${userExp}/${expToNextLvl}</td>
+                    <td class="td40px"><div id="forBarText">&nbsp;${userExp}/${expToNextLvl}</div></td>
                 </tr>
             </table>
         </div>
@@ -188,8 +166,6 @@
         <div class="logouttextContent">
             <a href="javascript:formSubmit()">Wyloguj</a>
         </div>
-        <div id="borderForRectangle"></div>
-        <div id="greenRectangle"></div>
     </c:if>
     <%--<div class="textContent">This is new font</div>--%>
 </div>

@@ -206,4 +206,5 @@ public class AppUser {
     public void setUserItems(List<Item> userItems) {
         this.userItems = userItems;
     }
+
 }

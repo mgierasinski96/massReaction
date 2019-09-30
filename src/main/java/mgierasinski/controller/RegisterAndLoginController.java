@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class RegisterController {
+public class RegisterAndLoginController {
 
     @Autowired
     AppUserService appUserService;
@@ -23,6 +23,11 @@ public class RegisterController {
     @Autowired
     ProfessionService professionService;
 
+    @RequestMapping(value="loginForm")
+    public String loginForm()
+    {
+        return "loginPage";
+    }
 
 
     @RequestMapping(value = "/register")

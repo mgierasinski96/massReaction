@@ -14,14 +14,13 @@ public class SpringSecurityCustomPagesController {
     public String customLogin(@RequestParam(value = "error", required = false) String error,
                               @RequestParam(value = "logout", required = false) String logout,
                               Model model) {
-        System.out.println(error);
 
         if (error != null) {
             model.addAttribute("error", "Niepoprawna nazwa użytkownika lub hasło");
+            return "loginPage";
         }
 
-
-        return "mainBody";
+        return "redirect:.html";
     }
 
     @RequestMapping(value = "/accessDenied")

@@ -6,7 +6,7 @@
 
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="../resources/css/registrationAndLogin.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/backgroundMapLoginRegistr.css">
     <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash&display=swap" rel="stylesheet">
     <title>Zarejestruj nową postać!</title>
 </head>
@@ -87,7 +87,7 @@
                                        style="width:100px" readonly/></td>
                         </tr>
                         <tr>
-                            <td id="healthInfo" class="statInfo">Zdrowie</td>
+                            <td id="healthInfo" class="statInfo">Życie</td>
                             <td><input name="userTotalHP" type="text" class="statsInput" value="4.5" id="healthStatValue"
                                        style="width:100px" readonly/></td>
                         </tr>

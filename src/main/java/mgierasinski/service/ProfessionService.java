@@ -2,6 +2,7 @@ package mgierasinski.service;
 
 import mgierasinski.domain.Profession;
 
+import java.sql.Blob;
 import java.util.List;
 
 public interface ProfessionService {
@@ -13,5 +14,6 @@ public interface ProfessionService {
     void removeProfession(long professionId);
     Profession findByProfessionName(String professionName);
     Profession findById(long id);
+    Blob getPhotoById(long id);
 
 }

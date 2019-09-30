@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="../resources/css/registrationAndLogin.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/backgroundMapLoginRegistr.css">
     <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash&display=swap" rel="stylesheet">
     <title>Zaloguj się</title>
 
@@ -71,6 +71,16 @@
 
         }
 
+        #error
+        {
+            color:darkred;
+            font-family: 'Berkshire Swash', cursive;
+            font-size: 19px;
+            background: yellow;
+            border: 3px solid darkred;
+            font-weight: bold;
+        }
+
 
 
 
@@ -90,7 +100,12 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://www.google-analytics.com/analytics.js" async></script>
+<script>
+    function error() {
+        alert("Niepoprawna nazwa użytkownika lub hasło");
 
+    }
+</script>
 
 <div id="container">
     <div id="backgroundMap">
@@ -112,6 +127,10 @@
                 <tr class="trPaddingBottom">
                     <td class="forButton" colspan="2"><button type="submit" class="btn3d" value="Zaloguj">Zaloguj</button></td>
                 </tr>
+<c:if test="${not empty error}">
+    <tr class="trPaddingBottom"><td colspan="2" id="error">${error}</td></tr>
+</c:if>
+
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         </table>
          </form>
