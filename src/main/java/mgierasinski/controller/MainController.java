@@ -27,9 +27,9 @@ public class MainController {
             username = principal.toString();
         }
         AppUser appUser=appUserService.findByLogin(username);
-        if(appUser!=null) {
+        if(appUser!=null)
             return "redirect:myCharacter.html";
-        }
+
 
 
         return "mainBody";
