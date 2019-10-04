@@ -29,45 +29,17 @@ public class AspectController {
     @Autowired
     LevelTableService levelTableService;
 
-    AppUser findAppUser() {
-        HttpServletRequest request;
-        try {
-            String username;
-            Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-            if (principal instanceof UserDetails) {
-                username = ((UserDetails) principal).getUsername();
-            } else {
-                username = principal.toString();
-            }
-
-            if (!(username.equals("anonymousUser") || username.equals("admin") || username.equals("gm") || username.equals("user"))) {
-                AppUser appUser = appUserService.findByLogin(username);
-                return appUser;
-            }
-        } catch (Exception ex) {
-            System.out.println("Niezalogowany lub nieistniejący użytkownik");
-        }
-
-        return null;
-    }
-
     @Before("execution(* mgierasinski.controller.AdviceController.*(..))")//to any method that is in package aop.luv2code.aopdemoDao
     @ModelAttribute("userExp")
     long userExp() {
 
-        AppUser appUser = findAppUser();
+        AppUser appUser = appUserService.findLoggedAppUser();
         if (appUser != null) {
             LevelTable level=levelTableService.getLevel(appUser.getUserLvl());
             LevelTable levelBelow=levelTableService.getLevel(appUser.getUserLvl()-1);
             long userExp;
-            if(appUser.getUserLvl()==1)
-            {
-                userExp=appUser.getUserTotalExp();
-            }
-            else {
-                userExp = appUser.getUserTotalExp() - levelBelow.getTotalExp();
-
-            }
+            if(appUser.getUserLvl()==1)  userExp=appUser.getUserTotalExp();
+            else   userExp = appUser.getUserTotalExp() - levelBelow.getTotalExp();
 
             if(userExp>level.getExp())
             {

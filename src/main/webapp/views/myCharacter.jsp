@@ -56,7 +56,7 @@
             color: darkred;
             text-align: center;
             font-weight: bold;
-            width: 60px;
+            width: 90px;
             height: 50px;
             font-size: 35px;
             border: 1px solid darkred;
@@ -76,16 +76,16 @@
             font-family: 'Berkshire Swash', cursive;
             color:darkred;
             vertical-align: top;
-
         }
 
     </style>
 </head>
 <body>
+
 <script>window.jQuery || document.write('<script src="/resources/js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
 <script src="/resources/js/plugins.js"></script>
 <!-- Add your site or application content here -->
-<script src="/resources/js/registrationAndLoginScript.js" async></script>
+<script src="/resources/js/myCharacter.js" async></script>
 <script src="/resources/js/vendor/modernizr-3.7.1.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -93,6 +93,18 @@
 <div id="container">
     <div id="backgroundMap">
         <div id="relativeContentOfPage">
+            <div id="hiddenDivForJs" style="display: none">
+<span id="userClass">${appUser.userProfession.professionName}</span>
+                <span id="dodgeCalc">${appUser.userProfession.dodgeCalculation}</span>
+                <span id="dmgCalc">${appUser.userProfession.dmgCalculation}</span>
+                <span id="hpCalc">${appUser.userProfession.hpCalculation}</span>
+                <ol class="listOfPoints">${listOfPointForJs}
+<c:forEach items="${listOfPointForJs}" var="point">
+                <li>${point.pointCost}</li>
+</c:forEach>
+                </ol>
+
+            </div>
             <table id="itemHolderTable" cellpadding="5px">
                 <tr>
 
@@ -113,7 +125,6 @@
                 </tr>
 
             </table>
-
             <table id="photoAndName">
                 <tr>
                     <td id="professionImage"><img
@@ -128,22 +139,24 @@
             <table id="statsTable" border="1px">
                 <tr>
                     <td class="statInfo">Siła</td>
-                    <td class="statValue">${appUser.userStrength}</td>
+                    <td class="statValue" id="userStrength">${appUser.userStrength}</td>
                     <td><img class="statImage" id="increaseStrength" src="../resources/character/plusStats.png">
                     </td>
                     <td><img src="/resources/pageElements/goldIcon40x40.png"><span id="strengthCost">${strengthCost}</span></td>
                 </tr>
                 <tr>
                     <td class="statInfo">Mądrość</td>
-                    <td class="statValue">${appUser.userWisdom}</td>
+                    <td class="statValue" id="userWisdom">${appUser.userWisdom}</td>
                     <td><img class="statImage" id="increaseWisdom" src="../resources/character/plusStats.png">
                     </td>
                     <td><img src="/resources/pageElements/goldIcon40x40.png"><span id="wisdomCost">${wisdomCost}</span></td>
                 </tr>
                 <tr>
                     <td class="statInfo">Zdrowie</td>
-                    <td class="statValue">${appUser.userHP}</td>
-                    <td><img class="statImage" id="increaseHealth" src="../resources/character/plusStats.png">
+                    <td class="statValue" id="userHPs">${appUser.userHP}</td>
+                    <td><form><img class="statImage" id="increaseHealth" src="../resources/character/plusStats.png">
+
+                    </form>
                     </td>
                     <td><img src="/resources/pageElements/goldIcon40x40.png"><span id="hpCost">${hpCost}</span></td>
                 </tr>
@@ -156,8 +169,10 @@
                     </td>
 
                     <td class="statValue">
-                    <c:if test="${appUser.userProfession.professionName=='Czarodziej'}">${appUser.userTotalDodge}%</c:if>
-                    <c:if test="${appUser.userProfession.professionName=='Wojownik'}">${appUser.userTotalDmg}</c:if>
+                    <c:if test="${appUser.userProfession.professionName=='Czarodziej'}">
+                        <span id="strengthStatValue">${appUser.userTotalDodge}</span>%</c:if>
+                    <c:if test="${appUser.userProfession.professionName=='Wojownik'}">
+                            <span id="strengthStatValue">${appUser.userTotalDmg}</span></c:if>
                 </td>
 
                 </tr>
@@ -166,14 +181,14 @@
                         <c:if test="${appUser.userProfession.professionName=='Wojownik'}">Odporność</c:if>
                     </td>
 
-                    <td class="statValue">
-                        <c:if test="${appUser.userProfession.professionName=='Czarodziej'}">${appUser.userTotalDmg}</c:if>
-                        <c:if test="${appUser.userProfession.professionName=='Wojownik'}">${appUser.userTotalDodge}%</c:if>
+                    <td class="statValue" >
+                        <c:if test="${appUser.userProfession.professionName=='Czarodziej'}"><span id="wisdomStatValue">${appUser.userTotalDmg}</span></c:if>
+                        <c:if test="${appUser.userProfession.professionName=='Wojownik'}"><span id="wisdomStatValue">${appUser.userTotalDodge}</span>%</c:if>
                     </td>
                 </tr>
                 <tr>
                     <td id="healthInfo" class="statInfo">Życie</td>
-                    <td class="statValue">
+                    <td class="statValue" id="healthStatValue">
                         ${appUser.userTotalHP}
                     </td>
                 </tr>

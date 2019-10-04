@@ -28,25 +28,18 @@ public class MyCharacterController {
 @RequestMapping(value="/myCharacter")
     public String myCharacter(Model model)
 {
-    String username;
-    Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-    if (principal instanceof UserDetails) {
-        username = ((UserDetails) principal).getUsername();
-    } else {
-        username = principal.toString();
-    }
-
-    if (!(username.equals("anonymousUser") || username.equals("admin") || username.equals("employee") || username.equals("user"))) {
-        AppUser appUser = appUserService.findByLogin(username);
+        AppUser appUser = appUserService.findLoggedAppUser();
+if(appUser!=null) {
+    model.addAttribute("appUser", appUser);
+    model.addAttribute("strengthCost", pointService.getPointById(appUser.getUserStrength()).getPointCost());
+    model.addAttribute("wisdomCost", pointService.getPointById(appUser.getUserWisdom()).getPointCost());
+    model.addAttribute("hpCost", pointService.getPointById(appUser.getUserHP()).getPointCost());
+    model.addAttribute("listOfPointForJs", pointService.getAll());
 
 
-        model.addAttribute("appUser",appUser);
-        model.addAttribute("strengthCost",pointService.getPointById(appUser.getUserStrength()).getPointCost());
-        model.addAttribute("wisdomCost",pointService.getPointById(appUser.getUserWisdom()).getPointCost());
-        model.addAttribute("hpCost",pointService.getPointById(appUser.getUserHP()).getPointCost());
-
-    }
     return "myCharacter";
+}
+return null;
 }
 
 

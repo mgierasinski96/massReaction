@@ -26,37 +26,13 @@ public class AspectController2 {
     @Autowired
     LevelTableService levelTableService;
 
-
-    AppUser findAppUser() {
-        HttpServletRequest request;
-        try {
-            String username;
-            Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-            if (principal instanceof UserDetails) {
-                username = ((UserDetails) principal).getUsername();
-            } else {
-                username = principal.toString();
-            }
-
-            if (!(username.equals("anonymousUser") || username.equals("admin") || username.equals("gm") || username.equals("user"))) {
-                AppUser appUser = appUserService.findByLogin(username);
-                return appUser;
-            }
-        } catch (Exception ex) {
-            System.out.println("Niezalogowany lub nieistniejący użytkownik");
-        }
-
-        return null;
-    }
-
     @Before("execution(* mgierasinski.controller.AdviceController.*(..))")//to any method that is in package aop.luv2code.aopdemoDao
     @ModelAttribute("userLvl")
     long userLvl() {
-        AppUser appUser = findAppUser();
-        if (appUser != null) {
-
+        AppUser appUser = appUserService.findLoggedAppUser();
+        if (appUser != null)
             return appUser.getUserLvl();
-        }
+
         return 0;
     }
 }

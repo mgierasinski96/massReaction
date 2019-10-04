@@ -44,6 +44,11 @@
         <put-attribute name="body" value="/views/myCharacter.jsp" />
     </definition>
 
+    <definition name="input" extends="base.definition">
+        <put-attribute name="title" value="input" />
+        <put-attribute name="body" value="/views/input.jsp" />
+    </definition>
+
  
 </tiles-definitions>
 

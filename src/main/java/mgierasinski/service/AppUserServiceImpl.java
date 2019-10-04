@@ -5,10 +5,13 @@ import mgierasinski.dao.AppUserRoleRepository;
 import mgierasinski.domain.AppUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Service
@@ -66,6 +69,30 @@ public class AppUserServiceImpl implements AppUserService{
         appUserRepository.lvlAdvanced(newLevel,userId);
 
     }
+
+    @Override
+    public AppUser findLoggedAppUser() {
+            HttpServletRequest request;
+            try {
+                String username;
+                Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+                if (principal instanceof UserDetails) {
+                    username = ((UserDetails) principal).getUsername();
+                } else {
+                    username = principal.toString();
+                }
+
+                if (!(username.equals("anonymousUser") || username.equals("admin") || username.equals("gm") || username.equals("user"))) {
+                    AppUser appUser = this.findByLogin(username);
+                    return appUser;
+                }
+            } catch (Exception ex) {
+                System.out.println("Niezalogowany lub nieistniejący użytkownik");
+            }
+
+            return null;
+        }
+
 
     private String hashPassword(String password) {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();

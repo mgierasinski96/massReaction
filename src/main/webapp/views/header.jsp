@@ -29,6 +29,7 @@
 
         {
            opacity: 0.7;
+            cursor: pointer;
         }
         #wikingHead
         {
@@ -59,9 +60,7 @@
             width: 170px;
             padding: 5px;
             text-decoration: none;
-            background: -webkit-linear-gradient(yellow, red);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color:darkorange;
             position: absolute;
             margin-top: 70px;
             margin-left: 73%;
@@ -77,9 +76,7 @@
             margin-left: 2%;
             height: 150px;
             text-decoration: none;
-            background: -webkit-linear-gradient(yellow, red);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+           color:darkorange;
         }
 
 
@@ -102,9 +99,7 @@
         {
             padding: 10px;
             text-decoration: none;
-            background: -webkit-linear-gradient(yellow, red);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color:darkorange;
             display: inline-block;
             float: left;
 
@@ -112,12 +107,26 @@
         .textContent li a:hover
         {
             opacity:0.7;
+            cursor: pointer;
         }
 
         .td40px
               {
             height: 40px;
+            width: 40px;
               }
+
+        #logoutlink
+        {
+            color: darkorange;
+            text-decoration:none;
+        }
+        #logoutlink:hover
+        {
+            opacity:0.7;
+            cursor: pointer;
+        }
+
 
 
 
@@ -139,15 +148,15 @@
             <table>
                 <tr>
                     <td class="td40px"><img src="/resources/pageElements/goldIcon40x40.png"></td>
-                    <td class="td40px">&nbsp;<b>${userGold}</b></td>
+                    <td class="td40px" id="userGold">${userGold}</td>
                 </tr>
                 <tr>
                     <td class="td40px">Lvl:</td>
-                    <td class="td40px">&nbsp;<b>${userLvl}</b></td>
+                    <td class="td40px" id="userLvl"><b>${userLvl}</b></td>
                 </tr>
                 <tr>
                     <td class="td40px">Exp:</td>
-                    <td class="td40px"><div id="forBarText">&nbsp;${userExp}/${expToNextLvl}</div></td>
+                    <td class="td40px"><div id="forBarText">${userExp}/${expToNextLvl}</div></td>
                 </tr>
             </table>
         </div>
@@ -164,7 +173,7 @@
         </form>
 
         <div class="logouttextContent">
-            <a href="javascript:formSubmit()">Wyloguj</a>
+            <a id="logoutlink" href="javascript:formSubmit()">Wyloguj</a>
         </div>
     </c:if>
     <%--<div class="textContent">This is new font</div>--%>
