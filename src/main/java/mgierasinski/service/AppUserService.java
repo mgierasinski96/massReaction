@@ -21,6 +21,11 @@ public interface AppUserService {
     AppUser findByEmail(String email);
 
     void lvlAdvanced(long newLevel,long userId);
+    void trainHp(int newUserHp,double newUserTotalHp,int newUserGold,long userId);
+    void trainDmgWarrior(int newUserStrength,double newUserTotalDmg,int newUserGold,long userId);
+    void trainDmgWizard(int newUserWisdom,double newUserTotalDmg,int newUserGold,long userId);
+    void trainDodgeWarrior(int newUserWisdom,double newUserTotalDodge,int newUserGold,long userId);
+    void trainDodgeWizard(int newUserStrength,double newUserTotalDodge,int newUserGold,long userId);
 
     AppUser findLoggedAppUser();
   //  void activateAppUser(mgierasinski.domain.AppUser appUser);

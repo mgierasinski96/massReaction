@@ -8,39 +8,16 @@
   <component name="ChangeListManager">
     <list default="true" id="046d5518-9329-49bb-8c33-ae94193df745" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mgierasinski/controller/AdviceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mgierasinski/controller/AdviceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mgierasinski/controller/AspectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mgierasinski/controller/AspectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mgierasinski/controller/AspectController2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mgierasinski/controller/AspectController2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mgierasinski/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mgierasinski/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mgierasinski/controller/MyCharacterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mgierasinski/controller/MyCharacterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mgierasinski/dao/AppUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mgierasinski/dao/AppUserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mgierasinski/service/AppUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mgierasinski/service/AppUserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mgierasinski/service/AppUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mgierasinski/service/AppUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mgierasinski/service/PointService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mgierasinski/service/PointService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mgierasinski/service/PointServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mgierasinski/service/PointServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/tilesConfiguration/tiles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/tilesConfiguration/tiles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/myCharacter.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/myCharacter.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgierasinski/controller/AdviceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mgierasinski/controller/AdviceController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgierasinski/controller/AspectController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mgierasinski/controller/AspectController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgierasinski/controller/AspectController2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mgierasinski/controller/AspectController2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgierasinski/controller/MyCharacterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mgierasinski/controller/MyCharacterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/myCharacter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/myCharacter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/input.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/input.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mgierasinski/controller/mainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mgierasinski/controller/mainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgierasinski/service/AppUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mgierasinski/service/AppUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgierasinski/service/AppUserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mgierasinski/service/AppUserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgierasinski/service/PointService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mgierasinski/service/PointService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgierasinski/service/PointServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mgierasinski/service/PointServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/controller/AdviceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/controller/AdviceController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/controller/AspectController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/controller/AspectController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/controller/AspectController2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/controller/AspectController2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/controller/MyCharacterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/controller/MyCharacterController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/controller/mainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/controller/mainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/service/AppUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/service/AppUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/service/AppUserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/service/AppUserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/service/PointService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/service/PointService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/service/PointServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/service/PointServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/tilesConfiguration/tiles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/tilesConfiguration/tiles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/views/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/views/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/views/myCharacter.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/views/myCharacter.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/resources/js/myCharacter.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/resources/js/myCharacter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/views/input.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/views/input.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -53,37 +30,106 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/myCharacter.jsp">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/tilesConfiguration/tiles.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="97" column="24" lean-forward="true" selection-start-line="97" selection-start-column="24" selection-end-line="97" selection-end-column="24" />
+            <state relative-caret-position="64">
+              <caret line="46" column="25" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/input.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="59" column="195" selection-start-line="59" selection-start-column="195" selection-end-line="59" selection-end-column="195" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/myCharacter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="24" column="20" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="20" />
+            <state relative-caret-position="-38">
+              <caret line="89" selection-start-line="89" selection-end-line="89" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/domain/AppUser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="38" lean-forward="true" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+            <state relative-caret-position="-136">
+              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/controller/MainController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="37" selection-start-line="37" selection-end-line="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/controller/TrainController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="611">
+              <caret line="45" column="43" selection-start-line="45" selection-start-column="43" selection-end-line="45" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/dao/AppUserRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/service/AppUserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="81">
+              <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/service/AppUserRoleServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-38">
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/service/ItemServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/service/AppUserServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="186">
+              <caret line="89" column="17" selection-start-line="89" selection-start-column="17" selection-end-line="89" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -95,16 +141,14 @@
       <list>
         <option value="XSLT Stylesheet" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JavaScript File" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>choseC</find>
-      <find>imageHolder</find>
       <find>error</find>
       <find>profession</find>
       <find>statsIn</find>
@@ -133,6 +177,8 @@
       <find>jquery</find>
       <find>plus</find>
       <find>succ</find>
+      <find>newV</find>
+      <find>roundTo</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -141,7 +187,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/mgierasinski/dao/ItemRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/mgierasinski/dao/ProfessionRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/mgierasinski/service/ItemServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/mgierasinski/domain/Item.java" />
@@ -158,7 +203,6 @@
         <option value="$PROJECT_DIR$/src/main/java/mgierasinski/domain/LevelTable.java" />
         <option value="$PROJECT_DIR$/src/main/java/mgierasinski/domain/Profession.java" />
         <option value="$PROJECT_DIR$/src/main/java/mgierasinski/controller/RegisterController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mgierasinski/dao/AppUserRepository.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/mgierasinski/controller/findLoggedUser.java" />
         <option value="$PROJECT_DIR$/src/main/java/mgierasinski/controller/FindLoggedUser.java" />
@@ -176,22 +220,24 @@
         <option value="$PROJECT_DIR$/src/main/java/mgierasinski/domain/Points.java" />
         <option value="$PROJECT_DIR$/src/main/java/mgierasinski/dao/PointRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/mgierasinski/domain/Point.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/tilesConfiguration/tiles.xml" />
         <option value="$PROJECT_DIR$/src/main/java/mgierasinski/config/HibernateConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/mgierasinski/service/PointService.java" />
         <option value="$PROJECT_DIR$/src/main/java/mgierasinski/service/PointServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/header.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/registrationAndLoginScript.js" />
-        <option value="$PROJECT_DIR$/src/main/java/mgierasinski/service/AppUserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mgierasinski/service/AppUserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/mgierasinski/controller/MyCharacterController.java" />
         <option value="$PROJECT_DIR$/src/main/java/mgierasinski/controller/AdviceController.java" />
         <option value="$PROJECT_DIR$/src/main/java/mgierasinski/controller/AspectController.java" />
         <option value="$PROJECT_DIR$/src/main/java/mgierasinski/controller/AspectController2.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mgierasinski/controller/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/myCharacter.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/myCharacter.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/tilesConfiguration/tiles.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/input.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/mgierasinski/dao/AppUserRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mgierasinski/service/AppUserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mgierasinski/service/AppUserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mgierasinski/controller/MainController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mgierasinski/controller/TrainController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/myCharacter.js" />
       </list>
     </option>
   </component>
@@ -291,6 +337,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="mgierasinski" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="massReaction" type="b2602c69:ProjectViewProjectNode" />
+              <item name="massReactionProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="mgierasinski" type="462c0819:PsiDirectoryNode" />
               <item name="domain" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -364,22 +419,23 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Course" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570141639744" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570291814836" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -568,12 +624,14 @@
       <workItem from="1569422011529" duration="83051000" />
       <workItem from="1569881311820" duration="22217000" />
       <workItem from="1570142100800" duration="11286000" />
-      <workItem from="1570186778873" duration="1527000" />
+      <workItem from="1570186778873" duration="2831000" />
+      <workItem from="1570199878823" duration="93000" />
+      <workItem from="1570279149629" duration="11020000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174290000" />
+    <option name="totallyTimeSpent" value="186801000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -588,7 +646,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4972973" visible="true" weight="0.2806354" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4972973" visible="true" weight="0.28517398" />
       <window_info id="Structure" order="1" sideWeight="0.5027027" side_tool="true" weight="0.27231467" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -612,6 +670,7 @@
       <window_info anchor="bottom" id="Version Control" order="13" />
       <window_info anchor="bottom" id="Application Servers" order="14" weight="0.3289689" />
       <window_info anchor="bottom" id="Messages" order="15" weight="0.3289689" />
+      <window_info anchor="bottom" id="Educational.CheckDetails" order="16" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -643,42 +702,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/dao/AppUserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="84" selection-start-line="21" selection-start-column="84" selection-end-line="21" selection-end-column="84" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/service/LevelTableService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/controller/FindLoggedUser.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/service/LevelTableServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/controller/LoginController.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/config/SecurityWebApplicationInitializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/config/SecurityConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
@@ -711,13 +734,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/itemHolders/helmetHolder.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/config/Spring5Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="101" column="19" lean-forward="true" selection-start-line="101" selection-start-column="19" selection-end-line="101" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/service/ProfessionService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -739,16 +755,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="489">
           <caret line="136" column="24" selection-start-line="136" selection-start-column="24" selection-end-line="136" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/domain/AppUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -814,29 +820,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/tilesConfiguration/tiles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="47" column="41" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/config/HibernateConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="254">
           <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/service/PointServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#726#727#0" expanded="true" />
-            <element signature="e#753#754#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -922,26 +909,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/service/AppUserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/service/AppUserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="87" column="17" lean-forward="true" selection-start-line="87" selection-start-column="17" selection-end-line="87" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/controller/SpringSecurityCustomPagesController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -970,16 +937,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
-          <caret line="40" column="30" lean-forward="true" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1016,31 +973,142 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/config/Spring5Init.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="38" lean-forward="true" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+        <state relative-caret-position="85">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/myCharacter.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/config/Spring5Config.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="24" column="20" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="20" />
+        <state relative-caret-position="170">
+          <caret line="99" column="21" lean-forward="true" selection-start-line="99" selection-start-column="21" selection-end-line="99" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="15" column="36" lean-forward="true" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/input.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="59" column="43" lean-forward="true" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/views/myCharacter.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
-          <caret line="97" column="24" lean-forward="true" selection-start-line="97" selection-start-column="24" selection-end-line="97" selection-end-column="24" />
+          <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/input.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/service/PointServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="59" column="195" selection-start-line="59" selection-start-column="195" selection-end-line="59" selection-end-column="195" />
+        <state relative-caret-position="172">
+          <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#726#727#0" expanded="true" />
+            <element signature="e#774#775#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/service/ItemService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/domain/AppUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-136">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/tilesConfiguration/tiles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="46" column="25" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/dao/AppUserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/service/AppUserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/service/AppUserRoleServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-38">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/service/ItemServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/service/AppUserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="89" column="17" selection-start-line="89" selection-start-column="17" selection-end-line="89" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/controller/TrainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="611">
+          <caret line="45" column="43" selection-start-line="45" selection-start-column="43" selection-end-line="45" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/myCharacter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-38">
+          <caret line="89" selection-start-line="89" selection-end-line="89" />
         </state>
       </provider>
     </entry>

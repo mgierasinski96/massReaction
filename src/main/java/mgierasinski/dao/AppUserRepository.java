@@ -21,6 +21,33 @@ public interface AppUserRepository extends JpaRepository<AppUser, Long> {
     @Modifying
     @Query(value = "update usercharacter uc set uc.userLvl=:newLevel where uc.userId=:userId ",nativeQuery = true)
     void lvlAdvanced(@Param("newLevel") long newLevel, @Param("userId") long userId);
+
+    @Transactional
+    @Modifying
+    @Query(value="update usercharacter uc set uc.userHp=:newUserHp,uc.userTotalHp=:newUserTotalHp,uc.userGold=:newUserGold where uc.userId=:userId ",nativeQuery = true)
+    void trainHp(@Param("newUserHp") int newUserHp,@Param("newUserTotalHp") double newUserTotalHp,@Param("newUserGold") long newUserGold,@Param("userId") long userId);
+
+    @Transactional
+    @Modifying
+    @Query(value="update usercharacter uc set uc.userStrength=:newUserStrength,uc.userTotalDmg=:newUserTotalDmg,uc.userGold=:newUserGold where uc.userId=:userId ",nativeQuery = true)
+    void trainDmgWarrior(@Param("newUserStrength") int newUserStrength,@Param("newUserTotalDmg") double newUserTotalDmg,@Param("newUserGold") long newUserGold,@Param("userId") long userId);
+
+    @Transactional
+    @Modifying
+    @Query(value="update usercharacter uc set uc.userWisdom=:newUserWisdom,uc.userTotalDmg=:newUserTotalDmg,uc.userGold=:newUserGold where uc.userId=:userId ",nativeQuery = true)
+    void trainDmgWizard(@Param("newUserWisdom") int newUserWisdom,@Param("newUserTotalDmg") double newUserTotalDmg,@Param("newUserGold") long newUserGold,@Param("userId") long userId);
+
+    @Transactional
+    @Modifying
+    @Query(value="update usercharacter uc set uc.userStrength=:newUserStrength,uc.userTotalDodge=:newUserTotalDodge,uc.userGold=:newUserGold where uc.userId=:userId ",nativeQuery = true)
+    void trainDodgeWizard(@Param("newUserStrength") int newUserStrength,@Param("newUserTotalDodge") double newUserTotalDodge,@Param("newUserGold") long newUserGold,@Param("userId") long userId);
+
+    @Transactional
+    @Modifying
+    @Query(value="update usercharacter uc set uc.userWisdom=:newUserWisdom,uc.userTotalDodge=:newUserTotalDodge,uc.userGold=:newUserGold where uc.userId=:userId ",nativeQuery = true)
+    void trainDodgeWarrior(@Param("newUserWisdom") int newUserWisdom,@Param("newUserTotalDodge") double newUserTotalDodge,@Param("newUserGold") long newUserGold,@Param("userId") long userId);
+
+
 }
 
 

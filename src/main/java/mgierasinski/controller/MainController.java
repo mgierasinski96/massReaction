@@ -11,9 +11,12 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import java.text.DecimalFormat;
 
 @Controller
 public class MainController {
@@ -22,8 +25,6 @@ public class MainController {
     @Autowired
     AppUserService appUserService;
 
-    @Autowired
-    PointService pointService;
 
     @RequestMapping(value = "/")
     public String mainPage() {
@@ -35,29 +36,6 @@ public class MainController {
         return "mainBody";
     }
 
-    @RequestMapping(value = "/input")
-    public String input(Model model) {
-        AppUser appUser = appUserService.findLoggedAppUser();
-        if (appUser != null) {
-            model.addAttribute("userId", appUser.getUserId());
-            model.addAttribute("pointList", pointService.getAll());
-            if (appUser.getUserProfession().getProfessionName().toLowerCase().equals("czarodziej")) {
-                model.addAttribute("wisdomCalc", appUser.getUserProfession().getDmgCalculation());
-                model.addAttribute("strengthCalc", appUser.getUserProfession().getDodgeCalculation());
-                model.addAttribute("healthCalc", appUser.getUserProfession().getHpCalculation());
-                model.addAttribute("userProfession", appUser.getUserProfession().getProfessionName());
-            } else {
-                model.addAttribute("wisdomCalc", appUser.getUserProfession().getDodgeCalculation());
-                model.addAttribute("strengthCalc", appUser.getUserProfession().getDmgCalculation());
-                model.addAttribute("healthCalc", appUser.getUserProfession().getHpCalculation());
-                model.addAttribute("userProfession", appUser.getUserProfession().getProfessionName());
-
-            }
-        }
-
-
-        return "input";
-    }
 
 }
 

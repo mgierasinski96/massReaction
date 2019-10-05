@@ -71,6 +71,32 @@ public class AppUserServiceImpl implements AppUserService{
     }
 
     @Override
+    public void trainHp(int newUserHp, double newUserTotalHp, int newUserGold, long userId) {
+        appUserRepository.trainHp(newUserHp,newUserTotalHp,newUserGold,userId);
+    }
+
+    @Override
+    public void trainDmgWarrior(int newUserStrength, double newUserTotalDmg, int newUserGold, long userId) {
+        appUserRepository.trainDmgWarrior(newUserStrength,newUserTotalDmg,newUserGold,userId);
+    }
+
+    @Override
+    public void trainDmgWizard(int newUserWisdom, double newUserTotalDmg, int newUserGold, long userId) {
+        appUserRepository.trainDmgWizard(newUserWisdom,newUserTotalDmg,newUserGold,userId);
+    }
+
+    @Override
+    public void trainDodgeWarrior(int newUserWisdom, double newUserTotalDodge, int newUserGold, long userId) {
+        appUserRepository.trainDodgeWarrior(newUserWisdom,newUserTotalDodge,newUserGold,userId);
+    }
+
+    @Override
+    public void trainDodgeWizard(int newUserStrength, double newUserTotalDodge, int newUserGold, long userId) {
+        appUserRepository.trainDodgeWizard(newUserStrength,newUserTotalDodge,newUserGold,userId);
+    }
+
+
+    @Override
     public AppUser findLoggedAppUser() {
             HttpServletRequest request;
             try {
