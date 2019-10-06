@@ -24,7 +24,7 @@
         #itemHolderTable {
             position: absolute;
             right: 0%;
-            top: 2%;
+            top: 8%;
         }
 
         #photoAndName {
@@ -77,6 +77,21 @@
             color:darkred;
             vertical-align: top;
         }
+        #bagpack
+        {
+            position: absolute;
+            top:2%;
+            left:40%;
+            background-image: url(/resources/backgrounds/bagBackground.png);
+            border:6px solid darkred;
+        }
+
+        .bagSlot
+        {
+            border:2px solid goldenrod;
+            width:100px;
+            height: 100px;
+        }
 
     </style>
 </head>
@@ -94,6 +109,7 @@
     <div id="backgroundMap">
         <div id="relativeContentOfPage">
             <div id="hiddenDivForJs" style="display: none">
+                <audio id="mouseClick" src="../resources/audio/mouseClick.mp3" preload="auto"></audio>
 <span id="userClass">${appUser.userProfession.professionName}</span>
                 <span id="dodgeCalc">${appUser.userProfession.dodgeCalculation}</span>
                 <span id="dmgCalc">${appUser.userProfession.dmgCalculation}</span>
@@ -125,6 +141,23 @@
                 </tr>
 
             </table>
+
+            <table id="bagpack" border="1">
+                <tr>
+                    <td class="bagSlot">slot1</td>
+                    <td class="bagSlot">slot2</td>
+                    <td class="bagSlot">slot3</td>
+                    <td class="bagSlot">slot3</td>
+                </tr>
+                <tr>
+                    <td class="bagSlot">slot1</td>
+                    <td class="bagSlot">slot2</td>
+                    <td class="bagSlot">slot3</td>
+                    <td class="bagSlot">slot3</td>
+                </tr>
+
+
+            </table>
             <table id="photoAndName">
                 <tr>
                     <td id="professionImage"><img
@@ -136,7 +169,7 @@
                 </tr>
             </table>
 
-            <table id="statsTable" border="1px">
+            <table id="statsTable">
                 <tr>
                     <td class="statInfo">Siła</td>
                     <td class="statValue" id="userStrength">${appUser.userStrength}</td>

@@ -4,6 +4,7 @@ $(document).ready(function () {
 
 
     $("#increaseHealth").click(function (event) {
+        mouseClickSound();
 
         var n = document.getElementById("userHPs").innerText;
         let userGold = parseInt(document.getElementById("userGold").innerText);
@@ -34,6 +35,7 @@ $(document).ready(function () {
 
 
     $("#increaseWisdom").click(function (event) {
+        mouseClickSound();
         event.stopImmediatePropagation();
         var w = document.getElementById("userWisdom").innerText;
         let userGold = parseInt(document.getElementById("userGold").innerText);
@@ -64,7 +66,7 @@ $(document).ready(function () {
     });
 
     $("#increaseStrength").click(function (event) {
-
+        mouseClickSound();
         let userGold = parseInt(document.getElementById("userGold").innerText);
         let strengthCost = parseInt(document.getElementById("strengthCost").innerText);
         if (userGold >= strengthCost) {
@@ -125,6 +127,10 @@ $(document).ready(function () {
             document.getElementById("healthStatValue").innerText = roundToPlaces(parseFloat(document.getElementById("userHPs").innerText) * hpCalc, 2);
 
         }
+    }
+
+    function mouseClickSound() {
+        document.getElementById('mouseClick').play();
     }
 
 
