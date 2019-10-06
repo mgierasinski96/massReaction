@@ -105,6 +105,37 @@ $(document).ready(function () {
         return calc;
     }
 
+
+    $(".item").hover(
+        function (evt) {
+
+        $(this).parent().css({
+            "background":"darkgray",
+            "cursor":"move"
+            }
+        );
+
+            $(this).parent().children("div").show(50);
+
+    },function (evt) {
+            $(this).parent().css(
+                {
+                    "background":"#d6d6d6",
+                    "cursor":"default"
+                })
+
+            $(this).parent().children("div").hide(50);
+        }
+
+
+    );
+
+
+
+
+
+
+
     function calculateStats() {
         if (document.getElementById("userClass").innerText.toLowerCase() == "czarodziej") {
 

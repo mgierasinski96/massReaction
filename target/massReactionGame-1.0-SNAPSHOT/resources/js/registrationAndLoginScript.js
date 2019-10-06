@@ -51,7 +51,7 @@ $(document).ready(function () {
             document.getElementById("strengthInfo").innerText="Obrażenia";
             document.getElementById("wisdomInfo").innerText="Odporność";
             document.getElementById("strengthStatValue").value= ""+roundToPlaces(document.getElementById("strength").value * 1.7,2);
-            document.getElementById("wisdomStatValue").value= ""+roundToPlaces(document.getElementById("wisdom").value,2)+"%";
+            document.getElementById("wisdomStatValue").value= ""+roundToPlaces(document.getElementById("wisdom").value*0.5,2)+"%";
             document.getElementById("healthStatValue").value= ""+roundToPlaces(document.getElementById("health").value * 2.3,2);
 
 

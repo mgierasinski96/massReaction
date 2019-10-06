@@ -35,6 +35,7 @@ if(appUser!=null) {
     model.addAttribute("wisdomCost", pointService.getPointById(appUser.getUserWisdom()).getPointCost());
     model.addAttribute("hpCost", pointService.getPointById(appUser.getUserHP()).getPointCost());
     model.addAttribute("listOfPointForJs", pointService.getAll());
+    model.addAttribute("itemListLength",appUser.getUserItems().size());
 
 
     return "myCharacter";

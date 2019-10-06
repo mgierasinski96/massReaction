@@ -1,3 +1,4 @@
+<%@ page import="mgierasinski.domain.AppUser" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
@@ -51,8 +52,7 @@
             top: 55%;
         }
 
-        .statValue
-        {
+        .statValue {
             color: darkred;
             text-align: center;
             font-weight: bold;
@@ -63,34 +63,75 @@
             background: yellow;
         }
 
-        #statsCalculation
-        {
+        #statsCalculation {
             position: absolute;
             top: 55%;
             left: 45%;
         }
 
-        #wisdomCost,#strengthCost,#hpCost
-        {
+        #wisdomCost, #strengthCost, #hpCost {
             font-size: 35px;
             font-family: 'Berkshire Swash', cursive;
-            color:darkred;
+            color: darkred;
             vertical-align: top;
         }
-        #bagpack
-        {
+
+        #bagpack {
             position: absolute;
-            top:2%;
-            left:40%;
-            background-image: url(/resources/backgrounds/bagBackground.png);
-            border:6px solid darkred;
+            top: 2%;
+            left: 40%;
+            background: #d6d6d6;
+            border: 6px solid darkred;
         }
 
-        .bagSlot
-        {
-            border:2px solid goldenrod;
-            width:100px;
+        .bagSlot {
+            border: 2px solid goldenrod;
+            width: 100px;
             height: 100px;
+            position: relative;
+
+        }
+
+        .itemDescritpion {
+            position: absolute;
+            width: 180px;
+            height: 300px;
+            top:-20px;
+            right:-190px;
+            z-index: 50;
+            display: none;
+        }
+
+        .statName {
+            padding: 3px;
+            height: 25px;
+            font-size: 18px;
+            font-family: 'Berkshire Swash', cursive;
+            color: darkred;
+        }
+
+        .itemStatValue {
+            width: 45px;
+            padding: 3px;
+            vertical-align: top;
+            height: 25px;
+            font-size: 20px;
+            font-family: 'Berkshire Swash', cursive;
+        }
+
+        .itemName {
+            font-size: 22px;
+            font-weight: bold;
+            font-family: 'Berkshire Swash', cursive;
+            color: green;
+            text-align: center;
+            padding: 4px;
+        }
+        #itemInfo
+        {
+            background-image: url("/resources/backgrounds/descritpionBackground.png");
+            border: 2px solid darkred;
+            width: 100%;
         }
 
     </style>
@@ -110,14 +151,14 @@
         <div id="relativeContentOfPage">
             <div id="hiddenDivForJs" style="display: none">
                 <audio id="mouseClick" src="../resources/audio/mouseClick.mp3" preload="auto"></audio>
-<span id="userClass">${appUser.userProfession.professionName}</span>
+                <span id="userClass">${appUser.userProfession.professionName}</span>
                 <span id="dodgeCalc">${appUser.userProfession.dodgeCalculation}</span>
                 <span id="dmgCalc">${appUser.userProfession.dmgCalculation}</span>
                 <span id="hpCalc">${appUser.userProfession.hpCalculation}</span>
                 <ol class="listOfPoints">${listOfPointForJs}
-<c:forEach items="${listOfPointForJs}" var="point">
-                <li>${point.pointCost}</li>
-</c:forEach>
+                    <c:forEach items="${listOfPointForJs}" var="point">
+                        <li>${point.pointCost}</li>
+                    </c:forEach>
                 </ol>
 
             </div>
@@ -143,21 +184,89 @@
             </table>
 
             <table id="bagpack" border="1">
-                <tr>
-                    <td class="bagSlot">slot1</td>
-                    <td class="bagSlot">slot2</td>
-                    <td class="bagSlot">slot3</td>
-                    <td class="bagSlot">slot3</td>
-                </tr>
-                <tr>
-                    <td class="bagSlot">slot1</td>
-                    <td class="bagSlot">slot2</td>
-                    <td class="bagSlot">slot3</td>
-                    <td class="bagSlot">slot3</td>
-                </tr>
 
+
+                <%
+                    int itemListLength = (int) request.getAttribute("itemListLength");
+                    int tdDiff = 4 - itemListLength;
+                    int totalDiff = 8 - itemListLength;
+                    int iter = 0;
+                %>
+                <tr>
+                    <c:forEach items="${appUser.userItems}" var="item">
+
+                    <td class="bagSlot">
+                        <img class="item"
+                             src="getItemImage/<c:out value='${item.itemId}'/>">
+                        <div class="itemDescritpion">
+                            <table id="itemInfo" border="1">
+
+                                <tr>
+                                    <td colspan="2" class="itemName">${item.itemName}</td>
+                                </tr>
+
+                                <tr>
+                                    <c:if test="${item.itemDmg != 0}">
+                                    <td class="statName">Obrażenia</td>
+                                    <td class="itemStatValue"> ${item.itemDmg}</td>
+                                </tr>
+                                </c:if>
+                                <c:if test="${item.itemHealth != 0}">
+                                    <tr>
+                                        <td class="statName">Życie</td>
+                                        <td class="itemStatValue"> ${item.itemHealth}</td>
+                                    </tr>
+                                </c:if>
+                                <c:if test="${item.itemStrength != 0}">
+                                    <tr>
+                                        <td class="statName">Siła</td>
+                                        <td class="itemStatValue">${item.itemStrength}</td>
+                                    </tr>
+                                </c:if>
+                                <c:if test="${item.itemWisdom != 0}">
+                                    <tr>
+                                        <td class="statName">Mądrość</td>
+                                        <td class="itemStatValue">${item.itemWisdom}</td>
+                                    </tr>
+                                </c:if>
+                                <c:if test="${item.itemHP != 0}">
+                                    <tr>
+                                        <td class="statName">Zdrowie</td>
+                                        <td class="itemStatValue">${item.itemHP}</td>
+                                    </tr>
+                                </c:if>
+
+                                <tr>
+                                    <td class="statName">Wartość</td>
+                                    <td class="itemStatValue"><div style="position: relative">${item.itemValue}&nbsp;<img style="position:absolute;padding-bottom: 0px" src="/resources/pageElements/goldIcon25x25.png"> </div> </td>
+
+                                </tr>
+
+
+                            </table>
+                                </div>
+                    </td>
+                    <% iter++;
+                        if (iter % 4 == 0) { %></tr>
+                <tr> <% } %>
+
+                    </c:forEach>
+
+                        <% if(tdDiff>0)  {     for(int i=0;i<tdDiff;i++)   {%>
+                    <td class="bagSlot"></td>
+                        <%   }  }%>
+
+                        <% if(totalDiff>=4)  {  %>
+                <tr><% for (int i = 0; i < 4; i++) {%>
+                    <td class="bagSlot"></td>
+                    <% } %></tr>
+                <% } %>
+
+
+                </tr>
 
             </table>
+
             <table id="photoAndName">
                 <tr>
                     <td id="professionImage"><img
@@ -169,27 +278,30 @@
                 </tr>
             </table>
 
-            <table id="statsTable">
+            <table id="statsTable" border="1">
                 <tr>
                     <td class="statInfo">Siła</td>
                     <td class="statValue" id="userStrength">${appUser.userStrength}</td>
                     <td><img class="statImage" id="increaseStrength" src="../resources/character/plusStats.png">
                     </td>
-                    <td><img src="/resources/pageElements/goldIcon40x40.png"><span id="strengthCost">${strengthCost}</span></td>
+                    <td><img src="/resources/pageElements/goldIcon40x40.png"><span
+                            id="strengthCost">${strengthCost}</span></td>
                 </tr>
                 <tr>
                     <td class="statInfo">Mądrość</td>
                     <td class="statValue" id="userWisdom">${appUser.userWisdom}</td>
                     <td><img class="statImage" id="increaseWisdom" src="../resources/character/plusStats.png">
                     </td>
-                    <td><img src="/resources/pageElements/goldIcon40x40.png"><span id="wisdomCost">${wisdomCost}</span></td>
+                    <td><img src="/resources/pageElements/goldIcon40x40.png"><span id="wisdomCost">${wisdomCost}</span>
+                    </td>
                 </tr>
                 <tr>
                     <td class="statInfo">Zdrowie</td>
                     <td class="statValue" id="userHPs">${appUser.userHP}</td>
-                    <td><form><img class="statImage" id="increaseHealth" src="../resources/character/plusStats.png">
+                    <td>
+                        <form><img class="statImage" id="increaseHealth" src="../resources/character/plusStats.png">
 
-                    </form>
+                        </form>
                     </td>
                     <td><img src="/resources/pageElements/goldIcon40x40.png"><span id="hpCost">${hpCost}</span></td>
                 </tr>
@@ -202,21 +314,24 @@
                     </td>
 
                     <td class="statValue">
-                    <c:if test="${appUser.userProfession.professionName=='Czarodziej'}">
-                        <span id="strengthStatValue">${appUser.userTotalDodge}</span>%</c:if>
-                    <c:if test="${appUser.userProfession.professionName=='Wojownik'}">
+                        <c:if test="${appUser.userProfession.professionName=='Czarodziej'}">
+                            <span id="strengthStatValue">${appUser.userTotalDodge}</span>%</c:if>
+                        <c:if test="${appUser.userProfession.professionName=='Wojownik'}">
                             <span id="strengthStatValue">${appUser.userTotalDmg}</span></c:if>
-                </td>
+                    </td>
 
                 </tr>
                 <tr>
-                    <td class="statInfo"><c:if test="${appUser.userProfession.professionName=='Czarodziej'}">Obrażenia</c:if>
+                    <td class="statInfo"><c:if
+                            test="${appUser.userProfession.professionName=='Czarodziej'}">Obrażenia</c:if>
                         <c:if test="${appUser.userProfession.professionName=='Wojownik'}">Odporność</c:if>
                     </td>
 
-                    <td class="statValue" >
-                        <c:if test="${appUser.userProfession.professionName=='Czarodziej'}"><span id="wisdomStatValue">${appUser.userTotalDmg}</span></c:if>
-                        <c:if test="${appUser.userProfession.professionName=='Wojownik'}"><span id="wisdomStatValue">${appUser.userTotalDodge}</span>%</c:if>
+                    <td class="statValue">
+                        <c:if test="${appUser.userProfession.professionName=='Czarodziej'}"><span
+                                id="wisdomStatValue">${appUser.userTotalDmg}</span></c:if>
+                        <c:if test="${appUser.userProfession.professionName=='Wojownik'}"><span
+                                id="wisdomStatValue">${appUser.userTotalDodge}</span>%</c:if>
                     </td>
                 </tr>
                 <tr>

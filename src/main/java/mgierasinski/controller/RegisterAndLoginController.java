@@ -1,8 +1,10 @@
 package mgierasinski.controller;
 
 import mgierasinski.domain.AppUser;
+import mgierasinski.domain.Item;
 import mgierasinski.domain.Profession;
 import mgierasinski.service.AppUserService;
+import mgierasinski.service.ItemService;
 import mgierasinski.service.ProfessionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
@@ -14,6 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 public class RegisterAndLoginController {
 
@@ -22,6 +27,9 @@ public class RegisterAndLoginController {
 
     @Autowired
     ProfessionService professionService;
+
+    @Autowired
+    ItemService itemService;
 
     @RequestMapping(value="loginForm")
     public String loginForm()
@@ -65,6 +73,11 @@ public class RegisterAndLoginController {
                     String dodge=wisdomValueCalc.substring(0,wisdomValueCalc.indexOf("%"));
                     appUser.setUserTotalDodge(Double.parseDouble(dodge));
                 }
+
+                List<Item> beginnerItems=new ArrayList<>();
+                beginnerItems.add(itemService.getItem(1));//drewniana tarcza glupcow
+                beginnerItems.add(itemService.getItem(2));//szturchacz
+                appUser.setUserItems(beginnerItems);
 
                 appUserService.addAppUser(appUser);
 
