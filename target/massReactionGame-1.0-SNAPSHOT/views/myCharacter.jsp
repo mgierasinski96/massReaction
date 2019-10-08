@@ -96,8 +96,8 @@
             position: absolute;
             width: 180px;
             height: 300px;
-            top:-20px;
-            right:-190px;
+            top: -20px;
+            right: -190px;
             z-index: 50;
             display: none;
         }
@@ -120,6 +120,7 @@
         }
 
         .itemName {
+            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
             font-size: 22px;
             font-weight: bold;
             font-family: 'Berkshire Swash', cursive;
@@ -127,11 +128,19 @@
             text-align: center;
             padding: 4px;
         }
-        #itemInfo
-        {
+
+        #itemInfo {
             background-image: url("/resources/backgrounds/descritpionBackground.png");
             border: 2px solid darkred;
             width: 100%;
+        }
+
+        .invisible {
+            display: none;
+        }
+
+        .itemHolder {
+            position: relative;
         }
 
     </style>
@@ -165,20 +174,42 @@
             <table id="itemHolderTable" cellpadding="5px">
                 <tr>
 
-                    <td colspan="2" style="position: relative"><img src="/resources/itemHolders/helmetHolder.png"
+                    <td style="height:200px;;width:150px;"></td>
+                   <td> <div class="itemHolder" id="helmetHolder"><img src="/resources/itemHolders/helmetHolder.png"
                                                                     draggable="false"
-                                                                    style="position:absolute;right:0px;;top:0px;"></td>
-                    <td><img src="/resources/itemHolders/necklaceHolder.png" draggable="false"></td>
+                                                                                                              ></div></td>
+                    <td>
+                        <div class="itemHolder" id="necklaceHolder"><img src="/resources/itemHolders/necklaceHolder.png"
+                                                                         draggable="false"></div>
+                    </td>
                 </tr>
                 <tr>
-                    <td><img src="/resources/itemHolders/weaponHolder.png" draggable="false"></td>
-                    <td><img src="/resources/itemHolders/plateHolder.png" draggable="false"></td>
-                    <td><img src="/resources/itemHolders/shieldHolder.png" draggable="false"></td>
+                    <td>
+                        <div class="itemHolder" id="weaponHolder"><img src="/resources/itemHolders/weaponHolder.png"
+                                                                       draggable="false"></div>
+                    </td>
+                    <td>
+                        <div class="itemHolder" id="plateHolder"><img src="/resources/itemHolders/plateHolder.png"
+                                                                      draggable="false"></div>
+                    </td>
+                    <td>
+                        <div class="itemHolder" id="shieldHolder"><img src="/resources/itemHolders/shieldHolder.png"
+                                                                       draggable="false"></div>
+                    </td>
                 </tr>
                 <tr>
-                    <td><img src="/resources/itemHolders/gauntletHolder.png" draggable="false"></td>
-                    <td><img src="/resources/itemHolders/bootsHolder.png" draggable="false"></td>
-                    <td><img src="/resources/itemHolders/ringHolder.png" draggable="false"></td>
+                    <td>
+                        <div class="itemHolder" id="gauntletHolder"><img src="/resources/itemHolders/gauntletHolder.png"
+                                                                         draggable="false"></div>
+                    </td>
+                    <td>
+                        <div class="itemHolder" id="bootsHolder"><img src="/resources/itemHolders/bootsHolder.png"
+                                                                      draggable="false"></div>
+                    </td>
+                    <td>
+                        <div class="itemHolder" id="ringHolder"><img src="/resources/itemHolders/ringHolder.png"
+                                                                     draggable="false"></div>
+                    </td>
                 </tr>
 
             </table>
@@ -196,56 +227,62 @@
                     <c:forEach items="${appUser.userItems}" var="item">
 
                     <td class="bagSlot">
-                        <img class="item"
-                             src="getItemImage/<c:out value='${item.itemId}'/>">
-                        <div class="itemDescritpion">
-                            <table id="itemInfo" border="1">
+                        <div class="item" id="" draggable="true">
+                            <img src="getItemImage/<c:out value='${item.itemId}'/>">
+                            <div class="itemDescritpion">
+                                <table id="itemInfo" border="1">
 
-                                <tr>
-                                    <td colspan="2" class="itemName">${item.itemName}</td>
-                                </tr>
-
-                                <tr>
-                                    <c:if test="${item.itemDmg != 0}">
-                                    <td class="statName">Obrażenia</td>
-                                    <td class="itemStatValue"> ${item.itemDmg}</td>
-                                </tr>
-                                </c:if>
-                                <c:if test="${item.itemHealth != 0}">
                                     <tr>
-                                        <td class="statName">Życie</td>
-                                        <td class="itemStatValue"> ${item.itemHealth}</td>
+                                        <td colspan="2" class="itemName">${item.itemName}</td>
                                     </tr>
-                                </c:if>
-                                <c:if test="${item.itemStrength != 0}">
+
                                     <tr>
-                                        <td class="statName">Siła</td>
-                                        <td class="itemStatValue">${item.itemStrength}</td>
+                                        <c:if test="${item.itemDmg != 0}">
+                                        <td class="statName">Obrażenia</td>
+                                        <td class="itemStatValue"> ${item.itemDmg}</td>
                                     </tr>
-                                </c:if>
-                                <c:if test="${item.itemWisdom != 0}">
+                                    </c:if>
+                                    <c:if test="${item.itemHealth != 0}">
+                                        <tr>
+                                            <td class="statName">Życie</td>
+                                            <td class="itemStatValue"> ${item.itemHealth}</td>
+                                        </tr>
+                                    </c:if>
+                                    <c:if test="${item.itemStrength != 0}">
+                                        <tr>
+                                            <td class="statName">Siła</td>
+                                            <td class="itemStatValue">${item.itemStrength}</td>
+                                        </tr>
+                                    </c:if>
+                                    <c:if test="${item.itemWisdom != 0}">
+                                        <tr>
+                                            <td class="statName">Mądrość</td>
+                                            <td class="itemStatValue">${item.itemWisdom}</td>
+                                        </tr>
+                                    </c:if>
+                                    <c:if test="${item.itemHP != 0}">
+                                        <tr>
+                                            <td class="statName">Zdrowie</td>
+                                            <td class="itemStatValue">${item.itemHP}</td>
+                                        </tr>
+                                    </c:if>
+
                                     <tr>
-                                        <td class="statName">Mądrość</td>
-                                        <td class="itemStatValue">${item.itemWisdom}</td>
+                                        <td class="statName">Wartość</td>
+                                        <td class="itemStatValue">
+                                            <div style="position: relative">${item.itemValue}&nbsp;<img
+                                                    style="position:absolute;padding-bottom: 0px"
+                                                    src="/resources/pageElements/goldIcon25x25.png"></div>
+                                        </td>
+
                                     </tr>
-                                </c:if>
-                                <c:if test="${item.itemHP != 0}">
-                                    <tr>
-                                        <td class="statName">Zdrowie</td>
-                                        <td class="itemStatValue">${item.itemHP}</td>
-                                    </tr>
-                                </c:if>
-
-                                <tr>
-                                    <td class="statName">Wartość</td>
-                                    <td class="itemStatValue"><div style="position: relative">${item.itemValue}&nbsp;<img style="position:absolute;padding-bottom: 0px" src="/resources/pageElements/goldIcon25x25.png"> </div> </td>
-
-                                </tr>
 
 
-                            </table>
-                                </div>
-                    </td>
+                                </table>
+                            </div><%--item description div--%>
+
+                        </div><%--class item--%>
+                    </td>  <%--bag slot with item--%>
                     <% iter++;
                         if (iter % 4 == 0) { %></tr>
                 <tr> <% } %>

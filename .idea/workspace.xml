@@ -8,32 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="046d5518-9329-49bb-8c33-ae94193df745" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mgierasinski/controller/MyCharacterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mgierasinski/controller/MyCharacterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mgierasinski/controller/PhotoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mgierasinski/controller/PhotoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mgierasinski/controller/RegisterAndLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mgierasinski/controller/RegisterAndLoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mgierasinski/controller/TrainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mgierasinski/controller/TrainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mgierasinski/domain/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mgierasinski/domain/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mgierasinski/service/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mgierasinski/service/ItemService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mgierasinski/service/ItemServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mgierasinski/service/ItemServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/myCharacter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/myCharacter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/registrationAndLoginScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/registrationAndLoginScript.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/myCharacter.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/myCharacter.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgierasinski/controller/MyCharacterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mgierasinski/controller/MyCharacterController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgierasinski/controller/PhotoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mgierasinski/controller/PhotoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgierasinski/controller/RegisterAndLoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mgierasinski/controller/RegisterAndLoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgierasinski/controller/TrainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mgierasinski/controller/TrainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgierasinski/domain/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mgierasinski/domain/Item.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgierasinski/service/ItemService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mgierasinski/service/ItemService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgierasinski/service/ItemServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mgierasinski/service/ItemServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/controller/MyCharacterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/controller/MyCharacterController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/controller/PhotoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/controller/PhotoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/controller/RegisterAndLoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/controller/RegisterAndLoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/controller/TrainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/controller/TrainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/domain/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/domain/Item.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/service/ItemService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/service/ItemService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/service/ItemServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/WEB-INF/classes/mgierasinski/service/ItemServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/resources/js/myCharacter.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/resources/js/myCharacter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/resources/js/registrationAndLoginScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/resources/js/registrationAndLoginScript.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/views/myCharacter.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/massReactionGame-1.0-SNAPSHOT/views/myCharacter.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -46,47 +23,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/views/myCharacter.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="113" column="23" selection-start-line="113" selection-start-column="23" selection-end-line="113" selection-end-column="23" />
+            <state relative-caret-position="98">
+              <caret line="216" column="28" selection-start-line="216" selection-start-column="28" selection-end-line="216" selection-end-column="28" />
               <folding>
                 <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#1;n#tr#6;n#table#0;n#div#0;n#td#0;n#tr#0;n#table#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#9077#9083#0#HTML" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#0;n#td#1;n#tr#6;n#table#0;n#div#0;n#td#0;n#tr#0;n#table#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/itemHolders/bootsHolder.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/views/header.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="137" column="51" selection-start-line="137" selection-start-column="49" selection-end-line="137" selection-end-column="51" />
+            <state relative-caret-position="81">
+              <caret line="122" column="9" selection-start-line="122" selection-start-column="9" selection-end-line="122" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/controller/MyCharacterController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/myCharacter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="47">
-              <caret line="114" column="13" lean-forward="true" selection-start-line="114" selection-start-column="13" selection-end-line="114" selection-end-column="13" />
+            <state relative-caret-position="1237">
+              <caret line="94" column="10" lean-forward="true" selection-start-line="94" selection-start-column="10" selection-end-line="94" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -106,36 +73,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>plus</find>
-      <find>succ</find>
-      <find>newV</find>
-      <find>roundTo</find>
-      <find>none</find>
-      <find>clickSou</find>
-      <find>img</find>
-      <find>photoand</find>
-      <find>backg</find>
-      <find>gold</find>
-      <find>calculate</find>
-      <find>sztur</find>
-      <find>profess</find>
-      <find>totalHp</find>
-      <find>round</find>
-      <find>forEach</find>
       <find>if</find>
       <find>colspan</find>
       <find>itemInfo</find>
-      <find>hover</find>
       <find>itemId</find>
       <find>bagSlot</find>
       <find>Warto</find>
       <find>trainWisdom</find>
-      <find>item</find>
       <find>td40px</find>
       <find>statName</find>
-      <find>al</find>
       <find>align</find>
       <find>itemStatValue</find>
+      <find>verti</find>
+      <find>elementBy</find>
+      <find>al</find>
+      <find>dragga\</find>
+      <find>dragE</find>
+      <find>dragga</find>
+      <find>css</find>
+      <find>alert</find>
+      <find>parent</find>
+      <find>ev</find>
+      <find>itemHolder</find>
+      <find>table</find>
+      <find>dragDropBag</find>
+      <find>item</find>
+      <find>hover</find>
+      <find>ho</find>
+      <find>none</find>
+      <find>children</find>
+      <find>paren</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -190,11 +157,11 @@
         <option value="$PROJECT_DIR$/src/main/java/mgierasinski/service/ItemServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/mgierasinski/controller/RegisterAndLoginController.java" />
         <option value="$PROJECT_DIR$/src/main/java/mgierasinski/controller/PhotoController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mgierasinski/controller/MyCharacterController.java" />
         <option value="$PROJECT_DIR$/src/main/java/mgierasinski/helpers/MathRound.java" />
         <option value="$PROJECT_DIR$/src/main/java/mgierasinski/controller/TrainController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/myCharacter.js" />
+        <option value="$PROJECT_DIR$/src/main/java/mgierasinski/controller/MyCharacterController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/myCharacter.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/myCharacter.js" />
       </list>
     </option>
   </component>
@@ -236,8 +203,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -374,6 +339,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="itemHolders" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="massReaction" type="b2602c69:ProjectViewProjectNode" />
+              <item name="massReactionProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -406,13 +380,15 @@
         </subPane>
       </pane>
       <pane id="Course" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570385757877" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570397768542" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -611,12 +587,14 @@
       <workItem from="1570186778873" duration="2831000" />
       <workItem from="1570199878823" duration="93000" />
       <workItem from="1570279149629" duration="13498000" />
-      <workItem from="1570305128352" duration="26079000" />
+      <workItem from="1570305128352" duration="30641000" />
+      <workItem from="1570397983165" duration="12750000" />
+      <workItem from="1570528711001" duration="2502000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="215358000" />
+    <option name="totallyTimeSpent" value="235172000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -631,7 +609,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4972973" visible="true" weight="0.28971255" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4972973" visible="true" weight="0.2987897" />
       <window_info id="Structure" order="1" sideWeight="0.5027027" side_tool="true" weight="0.27231467" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -687,9 +665,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/itemHolders/bootsHolder.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/itemHolders/gauntletHolder.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -1112,38 +1087,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mgierasinski/controller/MyCharacterController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+        <state relative-caret-position="-1">
+          <caret line="30" column="46" lean-forward="true" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/myCharacter.js">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/header.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="114" column="13" lean-forward="true" selection-start-line="114" selection-start-column="13" selection-end-line="114" selection-end-column="13" />
+        <state relative-caret-position="81">
+          <caret line="122" column="9" selection-start-line="122" selection-start-column="9" selection-end-line="122" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/header.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="137" column="51" selection-start-line="137" selection-start-column="49" selection-end-line="137" selection-end-column="51" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/itemHolders/bootsHolder.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/views/myCharacter.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="113" column="23" selection-start-line="113" selection-start-column="23" selection-end-line="113" selection-end-column="23" />
+        <state relative-caret-position="98">
+          <caret line="216" column="28" selection-start-line="216" selection-start-column="28" selection-end-line="216" selection-end-column="28" />
           <folding>
             <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#1;n#tr#6;n#table#0;n#div#0;n#td#0;n#tr#0;n#table#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#9077#9083#0#HTML" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#td#1;n#tr#6;n#table#0;n#div#0;n#td#0;n#tr#0;n#table#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/myCharacter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1237">
+          <caret line="94" column="10" lean-forward="true" selection-start-line="94" selection-start-column="10" selection-end-line="94" selection-end-column="10" />
         </state>
       </provider>
     </entry>

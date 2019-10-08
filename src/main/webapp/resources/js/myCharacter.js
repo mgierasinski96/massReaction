@@ -2,6 +2,155 @@ $(document).ready(function () {
 
     const pointCostList = document.querySelectorAll('.listOfPoints li');
 
+    var items = document.getElementsByClassName("item");
+    const itemHolders=document.getElementsByClassName("itemHolder");
+    const bagSlots=document.getElementsByClassName("bagSlot");
+
+//TODO SHIELD ON SHIELDSLOT ETC
+
+    for (var i = 0; i < items.length; i++)
+    {
+        items[i].setAttribute("id", "item" + i);
+        items[i].addEventListener('dragstart', dragStartHandler );
+        items[i].addEventListener('dragend', dragEnd );
+    };
+
+
+    for(const slot of bagSlots) // przeciaganie do slotow w plecaku
+    {
+        slot.addEventListener('dragover',dragOver);
+        slot.addEventListener('dragEnter',dragEnter);
+        slot.addEventListener('dragLeave',dragLeave);
+        slot.addEventListener('drop',dragDropBag);
+
+    }
+    for(const holder of itemHolders) //przeciagnaie na postac
+    {
+        holder.addEventListener('dragover',dragOver);
+        holder.addEventListener('dragEnter',dragEnter);
+        holder.addEventListener('dragLeave',dragLeave);
+        holder.addEventListener('drop',dragDrop);
+
+    }
+
+    function dragStartHandler(e)
+    {
+        e.dataTransfer.setData("text/plain", this.id);
+        setTimeout(()=> this.className="invisible",0);
+    };
+
+
+    function dragEnd(e)
+
+    {
+        this.className="item";
+    };
+
+
+    function dragOver(e)
+    {
+e.preventDefault();
+    }
+    function dragEnter(e)
+    {
+        e.preventDefault();
+
+    }
+    function dragLeave(e)
+    {
+        e.preventDefault();
+    }
+    function dragDrop(e)
+    {
+        e.preventDefault();
+        var data = e.dataTransfer.getData("text");
+        this.append(document.getElementById(data));
+        $(this).children(':last').css({//150x200
+                "position":"absolute",
+                "left":"75px",
+                "top":"100px",
+                 "margin-left":"-47.5px",
+            "margin-top":"-47.5px",
+            }
+        );
+        e.dataTransfer.clearData();
+    }
+
+
+    function dragDropBag(e) {
+        e.preventDefault();
+        var data = e.dataTransfer.getData("text");
+
+
+        if($(this).children().length==0)
+        {
+        this.append(document.getElementById(data));
+        $(this).children(':last').css({
+                "position": "absolute",
+                "left": "0px",
+                "top": "0px",
+                "margin-left": "0px",
+                "margin-top": "0px",
+            }
+        );
+        }
+        e.dataTransfer.clearData();
+    }
+
+
+
+
+
+
+
+    $(".item").hover(
+        function (evt) {
+
+        $(this).css({
+            "background":"darkgray",
+            "cursor":"move"
+            }
+        );
+
+            $(this).children("div").show(30);
+
+    },function (evt) {
+            $(this).css(
+                {
+                    "background": "#d6d6d6",
+                    "cursor": "default"
+                })
+
+            $(this).children("div").hide(30);
+        }
+    );
+
+
+
+
+    function calculateStats() {
+        if (document.getElementById("userClass").innerText.toLowerCase() == "czarodziej") {
+
+            let dodgeCalc = parseFloat(document.getElementById("dodgeCalc").innerText);
+            let dmgCalc = parseFloat(document.getElementById("dmgCalc").innerText);
+            let hpCalc = parseFloat(document.getElementById("hpCalc").innerText);
+
+            document.getElementById("strengthStatValue").innerText = "" + roundToPlaces(parseFloat(document.getElementById("userStrength").innerText) * dodgeCalc, 2);
+            document.getElementById("wisdomStatValue").innerText = "" + roundToPlaces(parseFloat(document.getElementById("userWisdom").innerText) * dmgCalc, 2);
+            document.getElementById("healthStatValue").innerText = "" + roundToPlaces(parseFloat(document.getElementById("userHPs").innerText) * hpCalc, 2);
+
+
+        } else {
+            let dodgeCalc = parseFloat(document.getElementById("dodgeCalc").innerText);
+            let dmgCalc = parseFloat(document.getElementById("dmgCalc").innerText);
+            let hpCalc = parseFloat(document.getElementById("hpCalc").innerText);
+
+            document.getElementById("strengthStatValue").innerText = roundToPlaces(parseFloat(document.getElementById("userStrength").innerText) * dmgCalc, 2);
+            document.getElementById("wisdomStatValue").innerText = roundToPlaces(parseFloat(document.getElementById("userWisdom").innerText) * dodgeCalc, 2);
+            document.getElementById("healthStatValue").innerText = roundToPlaces(parseFloat(document.getElementById("userHPs").innerText) * hpCalc, 2);
+
+        }
+    }
 
     $("#increaseHealth").click(function (event) {
         mouseClickSound();
@@ -105,64 +254,11 @@ $(document).ready(function () {
         return calc;
     }
 
-
-    $(".item").hover(
-        function (evt) {
-
-        $(this).parent().css({
-            "background":"darkgray",
-            "cursor":"move"
-            }
-        );
-
-            $(this).parent().children("div").show(50);
-
-    },function (evt) {
-            $(this).parent().css(
-                {
-                    "background":"#d6d6d6",
-                    "cursor":"default"
-                })
-
-            $(this).parent().children("div").hide(50);
-        }
-
-
-    );
-
-
-
-
-
-
-
-    function calculateStats() {
-        if (document.getElementById("userClass").innerText.toLowerCase() == "czarodziej") {
-
-            let dodgeCalc = parseFloat(document.getElementById("dodgeCalc").innerText);
-            let dmgCalc = parseFloat(document.getElementById("dmgCalc").innerText);
-            let hpCalc = parseFloat(document.getElementById("hpCalc").innerText);
-
-            document.getElementById("strengthStatValue").innerText = "" + roundToPlaces(parseFloat(document.getElementById("userStrength").innerText) * dodgeCalc, 2);
-            document.getElementById("wisdomStatValue").innerText = "" + roundToPlaces(parseFloat(document.getElementById("userWisdom").innerText) * dmgCalc, 2);
-            document.getElementById("healthStatValue").innerText = "" + roundToPlaces(parseFloat(document.getElementById("userHPs").innerText) * hpCalc, 2);
-
-
-        } else {
-            let dodgeCalc = parseFloat(document.getElementById("dodgeCalc").innerText);
-            let dmgCalc = parseFloat(document.getElementById("dmgCalc").innerText);
-            let hpCalc = parseFloat(document.getElementById("hpCalc").innerText);
-
-            document.getElementById("strengthStatValue").innerText = roundToPlaces(parseFloat(document.getElementById("userStrength").innerText) * dmgCalc, 2);
-            document.getElementById("wisdomStatValue").innerText = roundToPlaces(parseFloat(document.getElementById("userWisdom").innerText) * dodgeCalc, 2);
-            document.getElementById("healthStatValue").innerText = roundToPlaces(parseFloat(document.getElementById("userHPs").innerText) * hpCalc, 2);
-
-        }
-    }
-
     function mouseClickSound() {
         document.getElementById('mouseClick').play();
     }
+
+
 
 
 });
