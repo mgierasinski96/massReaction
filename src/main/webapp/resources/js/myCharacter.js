@@ -2,14 +2,32 @@ $(document).ready(function () {
 
     const pointCostList = document.querySelectorAll('.listOfPoints li');
 
+
+    var totalDmgFromItems=0;
+    var totalDodgeFromItems=0;
+    var totalHealthFromItems=0;
+
+
+    //jednak trzeba sie bawic w znajdowanie dzieci
     var items = document.getElementsByClassName("item");
     const itemHolders=document.getElementsByClassName("itemHolder");
     const bagSlots=document.getElementsByClassName("bagSlot");
+    var allItemsClasses=document.getElementsByClassName("itemClass");
+    var allItemsTables=document.getElementsByClassName("itemInfo");
 
-//TODO SHIELD ON SHIELDSLOT ETC
+//TODO STWORZYC 3 FUNKCJE KTORE OBLICZAJA DODZA,DMG,HEALTH DLA WSZYSTKICH ZALOZONYCH ITEMOW
+    //LUB 3 ZMIENNE
+    //DODAWAC TO W CALCULATE STATS,a w controlerze pobierac po prostu dmg uzytkownika i dmg broni
+    //i dodawac lub odejmowac//wobec tego byc moze zajdzie potrzeba wywolania calculateStats juz na poczatku
+    //zakladajac item nie moge updatowac wartosci sily madrosci i hp w bazie danych
+    //a wartosc podstawa to wartosc z bazy danych a od itemow to calkowita - ta z bazy
+    //czyli jedyny update jaki jest potrzebny do ten dmg,health,dodge, bo tylko one tutaj maja znaczenie
+
 
     for (var i = 0; i < items.length; i++)
     {
+        allItemsTables[i].setAttribute("id","table"+i);
+        allItemsClasses[i].setAttribute("id", "itemClass" + i);
         items[i].setAttribute("id", "item" + i);
         items[i].addEventListener('dragstart', dragStartHandler );
         items[i].addEventListener('dragend', dragEnd );
@@ -64,15 +82,85 @@ e.preventDefault();
     {
         e.preventDefault();
         var data = e.dataTransfer.getData("text");
-        this.append(document.getElementById(data));
-        $(this).children(':last').css({//150x200
-                "position":"absolute",
-                "left":"75px",
-                "top":"100px",
-                 "margin-left":"-47.5px",
-            "margin-top":"-47.5px",
+        let itemNumber=data.substring(4,5);
+
+
+
+        let element=document.getElementById(data);
+       let itemClass= document.getElementById("itemClass"+itemNumber).innerText
+
+        if((itemClass+"Holder")==this.id)
+        {
+
+            this.append(element);
+            $(this).children(':last').css({//150x200
+                    "position":"absolute",
+                    "left":"75px",
+                    "top":"100px",
+                    "margin-left":"-47.5px",
+                    "margin-top":"-47.5px",
+                }
+            );
+
+
+
+            let tBody=document.getElementById("table"+itemNumber).children;
+            let tableRows=tBody[0].children;//not first two rows
+
+            let itemDmg=0;
+            let itemHealth=0;
+            let itemDodge=0;
+            let itemWisdom=0;
+            let itemStrength=0;
+            let itemHp=0;
+            for(let i=2;i<tableRows.length;i++)
+            {
+                if($(tableRows[i]).find("td:eq(0)").text()=="Obrażenia")
+                {
+                    itemDmg=parseFloat($(tableRows[i]).find("td:eq(1)").text());
+                }
+                else if($(tableRows[i]).find("td:eq(0)").text()=="Życie")
+                {
+                    itemHealth=parseFloat($(tableRows[i]).find("td:eq(1)").text());
+                }
+                else if($(tableRows[i]).find("td:eq(0)").text()=="Unik")
+                {
+                    itemDodge=parseFloat($(tableRows[i]).find("td:eq(1)").text());
+                }
+                else if($(tableRows[i]).find("td:eq(0)").text()=="Siła")
+                {
+                    itemStrength=parseInt($(tableRows[i]).find("td:eq(1)").text());
+                }
+                else if($(tableRows[i]).find("td:eq(0)").text()=="Mądrość")
+                {
+                    itemWisdom=parseInt($(tableRows[i]).find("td:eq(1)").text());
+                }
+                else if($(tableRows[i]).find("td:eq(0)").text()=="Zdrowie")
+                {
+                    itemHp=parseInt($(tableRows[i]).find("td:eq(1)").text());
+                }
             }
-        );
+            document.getElementById("userStrength").innerText= ""+ (parseInt(document.getElementById("userStrength").innerText)+itemStrength);
+            document.getElementById("userWisdom").innerText=""+ (parseInt(document.getElementById("userWisdom").innerText)+itemWisdom);
+            document.getElementById("userHPs").innerText=""+ (parseInt(document.getElementById("userHPs").innerText)+itemHp);
+
+            totalDmgFromItems+=itemDmg;
+            totalDodgeFromItems+=itemDodge;
+            totalHealthFromItems+=itemHealth;
+
+            calculateStats();
+
+
+
+
+        }
+        else
+        {
+            alert("Nieprawidłowy przedmiot!");
+        }
+
+        //     alert(notes);
+
         e.dataTransfer.clearData();
     }
 
@@ -80,6 +168,17 @@ e.preventDefault();
     function dragDropBag(e) {
         e.preventDefault();
         var data = e.dataTransfer.getData("text");
+
+        let itemNumber=data.substring(4,5);
+
+        let element=document.getElementById(data);
+
+        let fromHoldersToBag=false;
+
+        if ($('#itemHolderTable').has(element).length)
+        {
+            fromHoldersToBag=true;
+        }
 
 
         if($(this).children().length==0)
@@ -93,6 +192,61 @@ e.preventDefault();
                 "margin-top": "0px",
             }
         );
+
+
+            let tBody=document.getElementById("table"+itemNumber).children;//get tbody from table
+
+
+            let tableRows=tBody[0].children;//not first two rows //get all 2 rows
+
+
+
+
+         if(fromHoldersToBag)
+         {
+            let itemDmg=0;
+            let itemHealth=0;
+            let itemDodge=0;
+            let itemWisdom=0;
+            let itemStrength=0;
+            let itemHp=0;
+            for(let i=2;i<tableRows.length;i++)
+            {
+                if($(tableRows[i]).find("td:eq(0)").text()=="Obrażenia")
+                {
+                    itemDmg=parseFloat($(tableRows[i]).find("td:eq(1)").text());
+                }
+                else if($(tableRows[i]).find("td:eq(0)").text()=="Życie")
+                {
+                    itemHealth=parseFloat($(tableRows[i]).find("td:eq(1)").text());
+                }
+                else if($(tableRows[i]).find("td:eq(0)").text()=="Unik")
+                {
+                    itemDodge=parseFloat($(tableRows[i]).find("td:eq(1)").text());
+                }
+                else if($(tableRows[i]).find("td:eq(0)").text()=="Siła")
+                {
+                    itemStrength=parseInt($(tableRows[i]).find("td:eq(1)").text());
+                }
+                else if($(tableRows[i]).find("td:eq(0)").text()=="Mądrość")
+                {
+                    itemWisdom=parseInt($(tableRows[i]).find("td:eq(1)").text());
+                }
+                else if($(tableRows[i]).find("td:eq(0)").text()=="Zdrowie")
+                {
+                    itemHp=parseInt($(tableRows[i]).find("td:eq(1)").text());
+                }
+            }
+            document.getElementById("userStrength").innerText= ""+ (parseInt(document.getElementById("userStrength").innerText)-itemStrength);
+            document.getElementById("userWisdom").innerText=""+ (parseInt(document.getElementById("userWisdom").innerText)-itemWisdom);
+            document.getElementById("userHPs").innerText=""+ (parseInt(document.getElementById("userHPs").innerText)-itemHp);
+
+            totalDmgFromItems-=itemDmg;
+            totalDodgeFromItems-=itemDodge;
+            totalHealthFromItems-=itemHealth;
+
+            calculateStats();
+         }
         }
         e.dataTransfer.clearData();
     }
@@ -135,9 +289,9 @@ e.preventDefault();
             let dmgCalc = parseFloat(document.getElementById("dmgCalc").innerText);
             let hpCalc = parseFloat(document.getElementById("hpCalc").innerText);
 
-            document.getElementById("strengthStatValue").innerText = "" + roundToPlaces(parseFloat(document.getElementById("userStrength").innerText) * dodgeCalc, 2);
-            document.getElementById("wisdomStatValue").innerText = "" + roundToPlaces(parseFloat(document.getElementById("userWisdom").innerText) * dmgCalc, 2);
-            document.getElementById("healthStatValue").innerText = "" + roundToPlaces(parseFloat(document.getElementById("userHPs").innerText) * hpCalc, 2);
+            document.getElementById("strengthStatValue").innerText = "" + roundToPlaces(parseFloat(document.getElementById("userStrength").innerText) * dodgeCalc+totalDodgeFromItems, 2);
+            document.getElementById("wisdomStatValue").innerText = "" + roundToPlaces(parseFloat(document.getElementById("userWisdom").innerText) * dmgCalc+totalDmgFromItems, 2);
+            document.getElementById("healthStatValue").innerText = "" + roundToPlaces(parseFloat(document.getElementById("userHPs").innerText) * hpCalc +totalHealthFromItems, 2);
 
 
         } else {
@@ -145,9 +299,9 @@ e.preventDefault();
             let dmgCalc = parseFloat(document.getElementById("dmgCalc").innerText);
             let hpCalc = parseFloat(document.getElementById("hpCalc").innerText);
 
-            document.getElementById("strengthStatValue").innerText = roundToPlaces(parseFloat(document.getElementById("userStrength").innerText) * dmgCalc, 2);
-            document.getElementById("wisdomStatValue").innerText = roundToPlaces(parseFloat(document.getElementById("userWisdom").innerText) * dodgeCalc, 2);
-            document.getElementById("healthStatValue").innerText = roundToPlaces(parseFloat(document.getElementById("userHPs").innerText) * hpCalc, 2);
+            document.getElementById("strengthStatValue").innerText = roundToPlaces(parseFloat(document.getElementById("userStrength").innerText) * dmgCalc +totalDmgFromItems, 2);
+            document.getElementById("wisdomStatValue").innerText = roundToPlaces(parseFloat(document.getElementById("userWisdom").innerText) * dodgeCalc+totalDodgeFromItems, 2);
+            document.getElementById("healthStatValue").innerText = roundToPlaces(parseFloat(document.getElementById("userHPs").innerText) * hpCalc +totalHealthFromItems, 2);
 
         }
     }

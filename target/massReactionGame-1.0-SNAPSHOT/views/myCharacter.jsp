@@ -92,7 +92,7 @@
 
         }
 
-        .itemDescritpion {
+        .itemDescription {
             position: absolute;
             width: 180px;
             height: 300px;
@@ -110,7 +110,8 @@
             color: darkred;
         }
 
-        .itemStatValue {
+        .dmgStatValue,.healthStatValue,.strengthStatValue,
+        .wisdomStatValue,.hpStatValue,.dodgeStatValue {
             width: 45px;
             padding: 3px;
             vertical-align: top;
@@ -129,7 +130,7 @@
             padding: 4px;
         }
 
-        #itemInfo {
+        .itemInfo {
             background-image: url("/resources/backgrounds/descritpionBackground.png");
             border: 2px solid darkred;
             width: 100%;
@@ -215,55 +216,61 @@
             </table>
 
             <table id="bagpack" border="1">
-
-
                 <%
                     int itemListLength = (int) request.getAttribute("itemListLength");
                     int tdDiff = 4 - itemListLength;
                     int totalDiff = 8 - itemListLength;
                     int iter = 0;
                 %>
+                <span id="forCheck" style="display: none"></span>
                 <tr>
                     <c:forEach items="${appUser.userItems}" var="item">
 
                     <td class="bagSlot">
                         <div class="item" id="" draggable="true">
                             <img src="getItemImage/<c:out value='${item.itemId}'/>">
-                            <div class="itemDescritpion">
-                                <table id="itemInfo" border="1">
-
-                                    <tr>
+                            <div class="itemDescription">
+                                <table id="withoutclass" class="itemInfo" border="1">
+                                    <tr class="pierwszyWiersz">
                                         <td colspan="2" class="itemName">${item.itemName}</td>
                                     </tr>
-
+                                    <tr style="display:none;" >
+                                        <td colspan="2" class="itemClass" id="empty">${item.itemClass}</td>
+                                    </tr>
                                     <tr>
                                         <c:if test="${item.itemDmg != 0}">
                                         <td class="statName">Obrażenia</td>
-                                        <td class="itemStatValue"> ${item.itemDmg}</td>
+                                        <td class="dmgStatValue" id="."> ${item.itemDmg}</td>
                                     </tr>
                                     </c:if>
                                     <c:if test="${item.itemHealth != 0}">
                                         <tr>
                                             <td class="statName">Życie</td>
-                                            <td class="itemStatValue"> ${item.itemHealth}</td>
+                                            <td class="healthStatValue" id=","> ${item.itemHealth}</td>
+                                        </tr>
+                                    </c:if>
+                                    <c:if test="${item.itemDodge != 0}">
+                                        <tr>
+                                            <td class="statName">Unik</td>
+                                            <td class="dodgeStatValue" id="i2"> ${item.itemDodge}</td>
                                         </tr>
                                     </c:if>
                                     <c:if test="${item.itemStrength != 0}">
                                         <tr>
                                             <td class="statName">Siła</td>
-                                            <td class="itemStatValue">${item.itemStrength}</td>
+                                            <td class="strengthStatValue" id="i1">${item.itemStrength}</td>
                                         </tr>
                                     </c:if>
                                     <c:if test="${item.itemWisdom != 0}">
                                         <tr>
                                             <td class="statName">Mądrość</td>
-                                            <td class="itemStatValue">${item.itemWisdom}</td>
+                                            <td class="wisdomStatValue" id="i">${item.itemWisdom}</td>
                                         </tr>
                                     </c:if>
                                     <c:if test="${item.itemHP != 0}">
                                         <tr>
                                             <td class="statName">Zdrowie</td>
-                                            <td class="itemStatValue">${item.itemHP}</td>
+                                            <td class="hpStatValue" id="i3">${item.itemHP}</td>
                                         </tr>
                                     </c:if>
 
@@ -279,9 +286,11 @@
 
 
                                 </table>
-                            </div><%--item description div--%>
+                            </div>
+                                <%--item description div--%>
 
-                        </div><%--class item--%>
+                        </div> <%--class item--%>
+
                     </td>  <%--bag slot with item--%>
                     <% iter++;
                         if (iter % 4 == 0) { %></tr>

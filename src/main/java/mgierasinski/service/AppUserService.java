@@ -11,9 +11,9 @@ import java.util.List;
 public interface AppUserService {
 
     void addAppUser(AppUser appUser);
-    void editAppUser(AppUser appUser);
-    List<AppUser> listAppUser();
 
+    List<AppUser> listAppUser();
+    void editAppUser(AppUser appUser);
    void removeAppUser(long id);
 
     AppUser getAppUser(long id);
