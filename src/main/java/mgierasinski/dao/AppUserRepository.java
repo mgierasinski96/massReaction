@@ -1,6 +1,7 @@
 package mgierasinski.dao;
 
 import mgierasinski.domain.AppUser;
+import mgierasinski.domain.AppUserItems;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -8,6 +9,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Transactional
 @Repository
@@ -16,6 +18,10 @@ public interface AppUserRepository extends JpaRepository<AppUser, Long> {
     AppUser findByEmail(String email);
     AppUser findByUserId(long id);
     AppUser findByLogin(String login);
+
+//    @Transactional
+//    @Query(value = "select * from usercharacter_items uci where uci.appUser_userId=:userId ",nativeQuery = true)
+//    List<AppUserItems> getUserItems(@Param("userId") long userId);
 
     @Transactional
     @Modifying
@@ -41,6 +47,8 @@ public interface AppUserRepository extends JpaRepository<AppUser, Long> {
     @Modifying
     @Query(value="update usercharacter uc set uc.userStrength=:newUserStrength,uc.userTotalDodge=:newUserTotalDodge,uc.userGold=:newUserGold where uc.userId=:userId ",nativeQuery = true)
     void trainDodgeWizard(@Param("newUserStrength") int newUserStrength,@Param("newUserTotalDodge") double newUserTotalDodge,@Param("newUserGold") long newUserGold,@Param("userId") long userId);
+
+
 
     @Transactional
     @Modifying

@@ -2,10 +2,12 @@ package mgierasinski.domain;
 
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name="item")
-public class Item {
+public class Item  implements Serializable {
 
     @Id
     @Column(name="itemId")
@@ -45,6 +47,18 @@ public class Item {
 
     @Column(name="itemClass")
     private  String itemClass;
+
+
+    @OneToMany(mappedBy = "item", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    private List<AppUserItems> appUserItems;
+
+    public List<AppUserItems> getAppUserItems() {
+        return appUserItems;
+    }
+
+    public void setAppUserItems(List<AppUserItems> appUserItems) {
+        this.appUserItems = appUserItems;
+    }
 
     public long getItemId() {
         return itemId;
@@ -142,4 +156,3 @@ public class Item {
         this.itemClass = itemClass;
     }
 }
-

@@ -1,8 +1,8 @@
 package mgierasinski.domain;
 
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -11,7 +11,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "userCharacter")
-public class AppUser {
+public class AppUser implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -84,8 +84,10 @@ public class AppUser {
 
 
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    private List<Item> userItems = new ArrayList<>(0);
+    @OneToMany(mappedBy = "appUser", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    private List<AppUserItems> appUserItems = new ArrayList<>();
+
+
 
     public long getUserId() {
         return userId;
@@ -199,12 +201,11 @@ public class AppUser {
         this.password = password;
     }
 
-    public List<Item> getUserItems() {
-        return userItems;
+    public List<AppUserItems> getAppUserItems() {
+        return appUserItems;
     }
 
-    public void setUserItems(List<Item> userItems) {
-        this.userItems = userItems;
+    public void setAppUserItems(List<AppUserItems> appUserItems) {
+        this.appUserItems = appUserItems;
     }
-
 }

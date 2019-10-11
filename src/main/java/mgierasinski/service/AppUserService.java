@@ -2,6 +2,7 @@ package mgierasinski.service;
 
 import mgierasinski.dao.AppUserRepository;
 import mgierasinski.domain.AppUser;
+import mgierasinski.domain.AppUserItems;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,6 +20,7 @@ public interface AppUserService {
     AppUser getAppUser(long id);
     AppUser findByLogin(String login);
     AppUser findByEmail(String email);
+//    List<AppUserItems> getUserItems(long userId);
 
     void lvlAdvanced(long newLevel,long userId);
     void trainHp(int newUserHp,double newUserTotalHp,int newUserGold,long userId);

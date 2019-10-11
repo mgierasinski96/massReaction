@@ -14,44 +14,36 @@
     <title>MyCharacter</title>
 
     <style>
-
         #userName {
             font-size: 25px;
             font-family: 'Berkshire Swash', cursive;
             text-align: center;
             color: darkred;
         }
-
         #itemHolderTable {
             position: absolute;
             right: 0%;
             top: 8%;
         }
-
         #photoAndName {
             position: absolute;
             left: 18%;
             top: 2%;
         }
-
         #professionImage {
             border: 3px solid darkred;
             background: rgb(216, 218, 227);
             background: radial-gradient(circle, rgba(216, 218, 227, 0.927608543417367) 51%, rgba(198, 154, 107, 0) 93%);
         }
-
         #userName {
             background: yellow;
             border: 3px solid darkred;
-
         }
-
         #statsTable {
             position: absolute;
             left: 18%;
             top: 55%;
         }
-
         .statValue {
             color: darkred;
             text-align: center;
@@ -62,20 +54,17 @@
             border: 1px solid darkred;
             background: yellow;
         }
-
         #statsCalculation {
             position: absolute;
             top: 55%;
             left: 45%;
         }
-
         #wisdomCost, #strengthCost, #hpCost {
             font-size: 35px;
             font-family: 'Berkshire Swash', cursive;
             color: darkred;
             vertical-align: top;
         }
-
         #bagpack {
             position: absolute;
             top: 2%;
@@ -83,15 +72,12 @@
             background: #d6d6d6;
             border: 6px solid darkred;
         }
-
         .bagSlot {
             border: 2px solid goldenrod;
             width: 100px;
             height: 100px;
             position: relative;
-
         }
-
         .itemDescription {
             position: absolute;
             width: 180px;
@@ -101,7 +87,6 @@
             z-index: 50;
             display: none;
         }
-
         .statName {
             padding: 3px;
             height: 25px;
@@ -109,7 +94,6 @@
             font-family: 'Berkshire Swash', cursive;
             color: darkred;
         }
-
         .dmgStatValue,.healthStatValue,.strengthStatValue,
         .wisdomStatValue,.hpStatValue,.dodgeStatValue {
             width: 45px;
@@ -119,7 +103,6 @@
             font-size: 20px;
             font-family: 'Berkshire Swash', cursive;
         }
-
         .itemName {
             text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
             font-size: 22px;
@@ -129,21 +112,17 @@
             text-align: center;
             padding: 4px;
         }
-
         .itemInfo {
             background-image: url("/resources/backgrounds/descritpionBackground.png");
             border: 2px solid darkred;
             width: 100%;
         }
-
         .invisible {
             display: none;
         }
-
         .itemHolder {
             position: relative;
         }
-
     </style>
 </head>
 <body>
@@ -176,9 +155,9 @@
                 <tr>
 
                     <td style="height:200px;;width:150px;"></td>
-                   <td> <div class="itemHolder" id="helmetHolder"><img src="/resources/itemHolders/helmetHolder.png"
-                                                                    draggable="false"
-                                                                                                              ></div></td>
+                    <td> <div class="itemHolder" id="helmetHolder"><img src="/resources/itemHolders/helmetHolder.png"
+                                                                        draggable="false"
+                    ></div></td>
                     <td>
                         <div class="itemHolder" id="necklaceHolder"><img src="/resources/itemHolders/necklaceHolder.png"
                                                                          draggable="false"></div>
@@ -224,60 +203,61 @@
                 %>
                 <span id="forCheck" style="display: none"></span>
                 <tr>
-                    <c:forEach items="${appUser.userItems}" var="item">
+                    <c:forEach items="${appUser.appUserItems}" var="appUserItem">
 
                     <td class="bagSlot">
                         <div class="item" id="" draggable="true">
-                            <img src="getItemImage/<c:out value='${item.itemId}'/>">
+                            <img src="getItemImage/<c:out value='${appUserItem.item.itemId}'/>">
                             <div class="itemDescription">
                                 <table id="withoutclass" class="itemInfo" border="1">
                                     <tr class="pierwszyWiersz">
-                                        <td colspan="2" class="itemName">${item.itemName}</td>
+                                        <td colspan="2" class="itemName">${appUserItem.item.itemName}</td>
                                     </tr>
                                     <tr style="display:none;" >
-                                        <td colspan="2" class="itemClass" id="empty">${item.itemClass}</td>
+                                        <td colspan="2" class="itemClass" id="empty">${appUserItem.item.itemClass}</td>
                                     </tr>
+                                    <c:if test="${appUserItem.item.itemDmg != 0}">
                                     <tr>
-                                        <c:if test="${item.itemDmg != 0}">
+
                                         <td class="statName">Obrażenia</td>
-                                        <td class="dmgStatValue" id="."> ${item.itemDmg}</td>
+                                        <td class="dmgStatValue" id="."> ${appUserItem.item.itemDmg}</td>
                                     </tr>
                                     </c:if>
-                                    <c:if test="${item.itemHealth != 0}">
+                                    <c:if test="${appUserItem.item.itemHealth != 0}">
                                         <tr>
                                             <td class="statName">Życie</td>
-                                            <td class="healthStatValue" id=","> ${item.itemHealth}</td>
+                                            <td class="healthStatValue" id=","> ${appUserItem.item.itemHealth}</td>
                                         </tr>
                                     </c:if>
-                                    <c:if test="${item.itemDodge != 0}">
+                                    <c:if test="${appUserItem.item.itemDodge != 0}">
                                         <tr>
                                             <td class="statName">Unik</td>
-                                            <td class="dodgeStatValue" id="i2"> ${item.itemDodge}</td>
+                                            <td class="dodgeStatValue" id="i2"> ${appUserItem.item.itemDodge}</td>
                                         </tr>
                                     </c:if>
-                                    <c:if test="${item.itemStrength != 0}">
+                                    <c:if test="${appUserItem.item.itemStrength != 0}">
                                         <tr>
                                             <td class="statName">Siła</td>
-                                            <td class="strengthStatValue" id="i1">${item.itemStrength}</td>
+                                            <td class="strengthStatValue" id="i1">${appUserItem.item.itemStrength}</td>
                                         </tr>
                                     </c:if>
-                                    <c:if test="${item.itemWisdom != 0}">
+                                    <c:if test="${appUserItem.item.itemWisdom != 0}">
                                         <tr>
                                             <td class="statName">Mądrość</td>
-                                            <td class="wisdomStatValue" id="i">${item.itemWisdom}</td>
+                                            <td class="wisdomStatValue" id="i">${appUserItem.item.itemWisdom}</td>
                                         </tr>
                                     </c:if>
-                                    <c:if test="${item.itemHP != 0}">
+                                    <c:if test="${appUserItem.item.itemHP != 0}">
                                         <tr>
                                             <td class="statName">Zdrowie</td>
-                                            <td class="hpStatValue" id="i3">${item.itemHP}</td>
+                                            <td class="hpStatValue" id="i3">${appUserItem.item.itemHP}</td>
                                         </tr>
                                     </c:if>
 
                                     <tr>
                                         <td class="statName">Wartość</td>
                                         <td class="itemStatValue">
-                                            <div style="position: relative">${item.itemValue}&nbsp;<img
+                                            <div style="position: relative">${appUserItem.item.itemValue}&nbsp;<img
                                                     style="position:absolute;padding-bottom: 0px"
                                                     src="/resources/pageElements/goldIcon25x25.png"></div>
                                         </td>

@@ -3,6 +3,7 @@ package mgierasinski.service;
 import mgierasinski.dao.AppUserRepository;
 import mgierasinski.dao.AppUserRoleRepository;
 import mgierasinski.domain.AppUser;
+import mgierasinski.domain.AppUserItems;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -63,6 +64,11 @@ public class AppUserServiceImpl implements AppUserService{
     public AppUser findByEmail(String email) {
         return appUserRepository.findByEmail(email);
     }
+
+//    @Override
+//    public List<AppUserItems> getUserItems(long userId) {
+//        return appUserRepository.getUserItems(userId);
+//    }
 
     @Override
     public void lvlAdvanced(long newLevel, long userId) {

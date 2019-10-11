@@ -1,6 +1,7 @@
 package mgierasinski.controller;
 
 import mgierasinski.domain.AppUser;
+import mgierasinski.domain.AppUserItems;
 import mgierasinski.domain.Item;
 import mgierasinski.domain.Profession;
 import mgierasinski.service.AppUserService;
@@ -74,10 +75,12 @@ public class RegisterAndLoginController {
                     appUser.setUserTotalDodge(Double.parseDouble(dodge));
                 }
 
-                List<Item> beginnerItems=new ArrayList<>();
-                beginnerItems.add(itemService.getItem(1));//drewniana tarcza glupcow
-                beginnerItems.add(itemService.getItem(2));//szturchacz
-                appUser.setUserItems(beginnerItems);
+                List<AppUserItems> beginnerItems=new ArrayList<>();
+                AppUserItems item1=new AppUserItems(appUser,itemService.getItem(1),false);
+                AppUserItems item2=new AppUserItems(appUser,itemService.getItem(2),false);
+                beginnerItems.add(item1);//drewniana tarcza glupcow
+                beginnerItems.add(item2);//szturchacz
+                appUser.setAppUserItems(beginnerItems);
 
                 appUserService.addAppUser(appUser);
 
