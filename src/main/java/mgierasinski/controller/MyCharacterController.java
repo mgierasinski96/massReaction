@@ -15,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -35,14 +36,31 @@ public class MyCharacterController {
         AppUser appUser = appUserService.findLoggedAppUser();
 
 if(appUser!=null) {
-    System.out.println("znalazlo usera "+ appUser.getAppUserItems().size());
+
     model.addAttribute("appUser", appUser);
     model.addAttribute("strengthCost", pointService.getPointById(appUser.getUserStrength()).getPointCost());
     model.addAttribute("wisdomCost", pointService.getPointById(appUser.getUserWisdom()).getPointCost());
     model.addAttribute("hpCost", pointService.getPointById(appUser.getUserHP()).getPointCost());
     model.addAttribute("listOfPointForJs", pointService.getAll());
-    model.addAttribute("userItems",appUser.getAppUserItems());
-model.addAttribute("itemListLength",appUser.getAppUserItems().size());
+
+    List<AppUserItems> allUserItems=appUser.getAppUserItems();
+    List<AppUserItems> equippedItems=new ArrayList<>();
+
+    List<AppUserItems> unEquippedItems=new ArrayList<>();
+    for(AppUserItems userItem: allUserItems)
+    {
+        if(userItem.getEquipped()==false)
+        {
+            unEquippedItems.add(userItem);
+        }
+        else if(userItem.getEquipped()==true)
+        {
+            equippedItems.add(userItem);
+        }
+    }
+    model.addAttribute("userUNequippedItems",unEquippedItems);
+    model.addAttribute("itemUNequippedListLength",unEquippedItems.size());
+    model.addAttribute("userEquippedItems",equippedItems);
 
 
 

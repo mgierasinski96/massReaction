@@ -19,14 +19,20 @@ public interface AppUserRepository extends JpaRepository<AppUser, Long> {
     AppUser findByUserId(long id);
     AppUser findByLogin(String login);
 
-//    @Transactional
-//    @Query(value = "select * from usercharacter_items uci where uci.appUser_userId=:userId ",nativeQuery = true)
-//    List<AppUserItems> getUserItems(@Param("userId") long userId);
+    @Transactional
+    @Modifying
+    @Query(value = "update usercharacter_items uci set uci.equipped=:equipped where uci.appUser_UserId=:userId and uci.item_itemId=:itemId ",nativeQuery = true)
+    void equipUnequipItem(@Param("userId") long userId, @Param("itemId") long itemId,@Param("equipped") Boolean equipped);
 
     @Transactional
     @Modifying
     @Query(value = "update usercharacter uc set uc.userLvl=:newLevel where uc.userId=:userId ",nativeQuery = true)
     void lvlAdvanced(@Param("newLevel") long newLevel, @Param("userId") long userId);
+
+    @Transactional
+    @Modifying
+    @Query(value = "update usercharacter uc set uc.userTotalDmg=:userDmg,uc.userTotalDodge=:userDodge,uc.userTotalHP=:userHP where uc.userId=:userId ",nativeQuery = true)
+    void updateDmgDodgeHealth(@Param("userDmg") float userDmg,@Param("userDodge") float userDodge,@Param("userHP") float userHP, @Param("userId") long userId);
 
     @Transactional
     @Modifying

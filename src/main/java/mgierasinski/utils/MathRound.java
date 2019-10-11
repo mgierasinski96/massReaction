@@ -1,4 +1,4 @@
-package mgierasinski.helpers;
+package mgierasinski.utils;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

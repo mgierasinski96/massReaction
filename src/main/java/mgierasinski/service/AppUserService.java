@@ -20,7 +20,9 @@ public interface AppUserService {
     AppUser getAppUser(long id);
     AppUser findByLogin(String login);
     AppUser findByEmail(String email);
-//    List<AppUserItems> getUserItems(long userId);
+    void updateDmgDodgeHP(float newDmg,float newDodge,float newHP,long userId);
+    void equipUnequipItem(long userId,long itemId,Boolean equipped);
+
 
     void lvlAdvanced(long newLevel,long userId);
     void trainHp(int newUserHp,double newUserTotalHp,int newUserGold,long userId);

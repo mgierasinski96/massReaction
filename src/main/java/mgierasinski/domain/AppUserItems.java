@@ -21,16 +21,26 @@ public class AppUserItems implements Serializable {
     @JoinColumn
     private Item item;
 
+
+
+    public AppUserItems() {
+    }
+
     public AppUserItems(AppUser appUser, Item item, Boolean equipped) {
         this.appUser = appUser;
         this.item = item;
         this.equipped = equipped;
     }
 
-    public AppUserItems() {
+    private Boolean equipped;
+
+    public Boolean getEquipped() {
+        return equipped;
     }
 
-    private Boolean equipped;
+    public void setEquipped(Boolean equipped) {
+        this.equipped = equipped;
+    }
 
     public AppUser getAppUser() {
         return appUser;
@@ -48,11 +58,5 @@ public class AppUserItems implements Serializable {
         this.item = item;
     }
 
-    public Boolean getEquipped() {
-        return equipped;
-    }
 
-    public void setEquipped(Boolean equipped) {
-        this.equipped = equipped;
-    }
 }

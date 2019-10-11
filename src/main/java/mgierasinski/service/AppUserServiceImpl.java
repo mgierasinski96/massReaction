@@ -65,6 +65,17 @@ public class AppUserServiceImpl implements AppUserService{
         return appUserRepository.findByEmail(email);
     }
 
+    @Override
+    public void updateDmgDodgeHP(float dmg,float dodge,float hp, long userId) {
+        appUserRepository.updateDmgDodgeHealth(dmg,dodge,hp, userId);
+    }
+
+    @Override
+    public void equipUnequipItem(long userId, long itemId, Boolean equipped) {
+        appUserRepository.equipUnequipItem(userId, itemId, equipped);
+    }
+
+
 //    @Override
 //    public List<AppUserItems> getUserItems(long userId) {
 //        return appUserRepository.getUserItems(userId);

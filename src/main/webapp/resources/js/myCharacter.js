@@ -1,20 +1,28 @@
 $(document).ready(function () {
 
-    const pointCostList = document.querySelectorAll('.listOfPoints li');
+    var pointCostList = document.querySelectorAll('.listOfPoints li');
 
+    var totalStrengthFromItems=0;
+    var totalWisdomFromItems=0;
+    var totalHPfromItems=0;
 
     var totalDmgFromItems = 0;
     var totalDodgeFromItems = 0;
     var totalHealthFromItems = 0;
 
+   calculateStatsWithEquippedItems();
 
-    //TOTAL DMG FROM ITEMS TRZEBA BY MOZE ZAPISAC W BAZIE DANYCH I POBIERAC GO I SETOWAC TUTAJ BO INACZEJ
-    // DO MOICH 3 ZMIENNYCH JAKO SUME WSZYSTKICH ITEMOW EQUIPPED ALE BONUSY TEZ NIESTETY
+   // alert("po odswiezeniu strony punktow "+totalHPfromItems);
+   // alert("po odswiezeniu strony zycia "+totalHealthFromItems)
+
+
+//TODO KLIKNIECIE W TRENING PRZY ZALOZONYM ITEMIE SPRAWIA ZE KOSZT TRENINGU ZBYT WIELE DROZEJE
     var items = document.getElementsByClassName("item");
-    const itemHolders = document.getElementsByClassName("itemHolder");
-    const bagSlots = document.getElementsByClassName("bagSlot");
+    var itemHolders = document.getElementsByClassName("itemHolder");
+    var bagSlots = document.getElementsByClassName("bagSlot");
     var allItemsClasses = document.getElementsByClassName("itemClass");
     var allItemsTables = document.getElementsByClassName("itemInfo");
+    var allItemDBid=document.getElementsByClassName("itemDBId");
 
 //TODO
 
@@ -25,13 +33,13 @@ $(document).ready(function () {
 
 
     for (var i = 0; i < items.length; i++) {
+        allItemDBid[i].setAttribute("id","databaseId"+i);
         allItemsTables[i].setAttribute("id", "table" + i);
         allItemsClasses[i].setAttribute("id", "itemClass" + i);
         items[i].setAttribute("id", "item" + i);
         items[i].addEventListener('dragstart', dragStartHandler);
         items[i].addEventListener('dragend', dragEnd);
-    }
-    ;
+    };
 
 
     for (const slot of bagSlots) // przeciaganie do slotow w plecaku
@@ -48,7 +56,6 @@ $(document).ready(function () {
         holder.addEventListener('dragEnter', dragEnter);
         holder.addEventListener('dragLeave', dragLeave);
         holder.addEventListener('drop', dragDrop);
-
     }
 
     function dragStartHandler(e) {
@@ -125,11 +132,33 @@ $(document).ready(function () {
             document.getElementById("userWisdom").innerText = "" + (parseInt(document.getElementById("userWisdom").innerText) + itemWisdom);
             document.getElementById("userHPs").innerText = "" + (parseInt(document.getElementById("userHPs").innerText) + itemHp);
 
+            totalWisdomFromItems+=itemWisdom;
+            totalStrengthFromItems+=itemStrength;
+            totalHPfromItems+=itemHp;
+
+            // alert("ta tarcza przy zakladaniu ma zycia "+itemHealth)
             totalDmgFromItems += itemDmg;
             totalDodgeFromItems += itemDodge;
             totalHealthFromItems += itemHealth;
-
             calculateStats();
+            let eItemId=parseInt(document.getElementById("databaseId"+itemNumber).innerText);
+
+            let newStrengthCalc=parseFloat(document.getElementById("strengthStatValue").innerText);
+            let newWisdomCalc=parseFloat(document.getElementById("wisdomStatValue").innerText);
+            let newHPCalc=parseFloat(document.getElementById("healthStatValue").innerText);
+
+            $.post("/equipItem", {
+                eItemId: eItemId,
+                newStrengthCalc: newStrengthCalc,
+                newWisdomCalc: newWisdomCalc,
+                newHPCalc: newHPCalc,
+            }, function (data) {
+
+            }).done(function () {
+            }).fail(function (xhr, textStatus, errorThrown) {
+            }).always(function () {
+            });
+
 
 
         } else {
@@ -201,12 +230,46 @@ $(document).ready(function () {
                 document.getElementById("userWisdom").innerText = "" + (parseInt(document.getElementById("userWisdom").innerText) - itemWisdom);
                 document.getElementById("userHPs").innerText = "" + (parseInt(document.getElementById("userHPs").innerText) - itemHp);
 
+                totalWisdomFromItems-=itemWisdom;
+                totalStrengthFromItems-=itemStrength;
+                totalHPfromItems-=itemHp;
+
                 totalDmgFromItems -= itemDmg;
                 totalDodgeFromItems -= itemDodge;
+                // alert("zdejmuje tarcze czyli odejmuje sobie zycia "+itemHealth)
                 totalHealthFromItems -= itemHealth;
 
+
                 calculateStats();
+
+                let uItemId=parseInt(document.getElementById("databaseId"+itemNumber).innerText);
+
+                let newStrengthCalc=parseFloat(document.getElementById("strengthStatValue").innerText);
+                let newWisdomCalc=parseFloat(document.getElementById("wisdomStatValue").innerText);
+                let newHPCalc=parseFloat(document.getElementById("healthStatValue").innerText);
+
+                // alert("ILE MAM TERAZ HP? "+newHPCalc);
+
+
+                $.post("/unequipItem", {
+                    uItemId: uItemId,
+                    newStrengthCalc: newStrengthCalc,
+                    newWisdomCalc: newWisdomCalc,
+                    newHPCalc: newHPCalc,
+                }, function (data) {
+                }).done(function () {
+                }).fail(function (xhr, textStatus, errorThrown) {
+                }).always(function () {
+                });
+
+
+
+
             }
+
+
+
+
         }
         e.dataTransfer.clearData();
     }
@@ -245,6 +308,8 @@ $(document).ready(function () {
             document.getElementById("strengthStatValue").innerText = "" + roundToPlaces(parseFloat(document.getElementById("userStrength").innerText) * dodgeCalc + totalDodgeFromItems, 2);
             document.getElementById("wisdomStatValue").innerText = "" + roundToPlaces(parseFloat(document.getElementById("userWisdom").innerText) * dmgCalc + totalDmgFromItems, 2);
             document.getElementById("healthStatValue").innerText = "" + roundToPlaces(parseFloat(document.getElementById("userHPs").innerText) * hpCalc + totalHealthFromItems, 2);
+            // alert("total PUNKTY(trenowane) zycia from items po zdjeciu=0 "+totalHPfromItems);
+            // alert("total zycie from items po zdjeciu =0 "+totalHealthFromItems);
 
 
         } else {
@@ -271,8 +336,9 @@ $(document).ready(function () {
             document.getElementById("userGold").innerText = "" + newUserGold;
             let newHealthValue = (parseInt(n) + 1);
             document.getElementById("userHPs").innerText = "" + newHealthValue;
-            document.getElementById("hpCost").innerText = pointCostList[newHealthValue - 1].textContent;
+            document.getElementById("hpCost").innerText = pointCostList[newHealthValue - totalHPfromItems-1].textContent;
             calculateStats();
+            newHealthValue=newHealthValue-totalHPfromItems;
             $.post("/trainHp", {
                 newUserGold: newUserGold,
                 newHealthValue: newHealthValue,
@@ -282,7 +348,7 @@ $(document).ready(function () {
 
             }).done(function () {
             }).fail(function (xhr, textStatus, errorThrown) {
-            }).complete(function () {
+            }).always(function () {//bylo complete
             });
         } else
             alert("Brak złota");
@@ -301,8 +367,9 @@ $(document).ready(function () {
             document.getElementById("userGold").innerText = "" + newUserGold;
             let newWisdomValue = (parseInt(w) + 1);
             document.getElementById("userWisdom").innerText = "" + newWisdomValue;
-            document.getElementById("wisdomCost").innerText = pointCostList[newWisdomValue - 1].textContent;
+            document.getElementById("wisdomCost").innerText = pointCostList[newWisdomValue - totalWisdomfromItems- 1].textContent;
             calculateStats();
+            newWisdomValue=newWisdomValue - totalWisdomfromItems;
             $.post("/trainWisdom", {
                 newUserGold: newUserGold,
                 newWisdomValue: newWisdomValue,
@@ -313,7 +380,7 @@ $(document).ready(function () {
 
             }).done(function () {
             }).fail(function (xhr, textStatus, errorThrown) {
-            }).complete(function () {
+            }).always(function () {
             });
         } else
             alert("Brak złota");
@@ -331,8 +398,9 @@ $(document).ready(function () {
             document.getElementById("userGold").innerText = "" + newUserGold;
             let newStrengthValue = (parseInt(s) + 1);
             document.getElementById("userStrength").innerText = "" + newStrengthValue;
-            document.getElementById("strengthCost").innerText = pointCostList[newStrengthValue - 1].textContent;
+            document.getElementById("strengthCost").innerText = pointCostList[newStrengthValue -totalStrengthFromItems- 1].textContent;
             calculateStats();
+            newStrengthValue=newStrengthValue-totalStrengthFromItems;
             $.post("/trainStrength", {
                 newUserGold: newUserGold,
                 newStrengthValue: newStrengthValue,
@@ -343,7 +411,7 @@ $(document).ready(function () {
 
             }).done(function () {
             }).fail(function (xhr, textStatus, errorThrown) {
-            }).complete(function () {
+            }).always(function () {//bylo complete
             });
         } else
             alert("Brak złota");
@@ -363,6 +431,326 @@ $(document).ready(function () {
 
     function mouseClickSound() {
         document.getElementById('mouseClick').play();
+    }
+    function calculateStatsWithEquippedItems() {
+
+        let totalEqWisdom=0;
+        let totalEqStrength=0;
+        let totalEqHP=0;
+        let totalEqDmg=0;
+        let totalEqHealth=0;
+        let totalEqDodge=0;
+        if (document.getElementById("bootsHolder").children.length > 1) {
+            let itemWisdom = 0;
+            let itemStrength = 0;
+            let itemHp = 0;
+            let thisItemDmg=0;
+            let thisItemHealth=0;
+            let thisItemDodge=0;
+
+            if (document.getElementById("equippedBootsStrength") != null) {
+                itemStrength = parseInt(document.getElementById("equippedBootsStrength").innerText)
+            }
+            if (document.getElementById("equippedBootsWisdom") != null) {
+                itemWisdom = parseInt(document.getElementById("equippedBootsWisdom").innerText)
+            }
+            if (document.getElementById("equippedBootsHP") != null) {
+                itemHp = parseInt(document.getElementById("equippedBootsHP").innerText)
+            }
+            if (document.getElementById("equippedBootsDmg") != null) {
+                thisItemDmg = parseFloat(document.getElementById("equippedBootsDmg").innerText)
+            }
+            if (document.getElementById("equippedBootsHealth") != null) {
+                thisItemHealth = parseFloat(document.getElementById("equippedBootsHealth").innerText)
+            }
+            if (document.getElementById("equippedBootsDodge") != null) {
+                thisItemDodge = parseFloat(document.getElementById("equippedBootsDodge").innerText)
+            }
+            totalEqDmg+=thisItemDmg;
+            totalEqHealth+=thisItemHealth;
+            totalEqDodge+=thisItemDodge;
+            totalEqWisdom+=itemWisdom;
+            totalEqStrength+=itemStrength;
+            totalEqHP+=itemHp;
+            document.getElementById("userStrength").innerText = "" + (parseInt(document.getElementById("userStrength").innerText) + itemStrength);
+            document.getElementById("userWisdom").innerText = "" + (parseInt(document.getElementById("userWisdom").innerText) + itemWisdom);
+            document.getElementById("userHPs").innerText = "" + (parseInt(document.getElementById("userHPs").innerText) + itemHp);
+
+        }
+        if (document.getElementById("shieldHolder").children.length > 1) {
+            let itemWisdom = 0;
+            let itemStrength = 0;
+            let itemHp = 0;
+            let thisItemDmg=0;
+            let thisItemHealth=0;
+            let thisItemDodge=0;
+            if (document.getElementById("equippedShieldStrength") != null) {
+                itemStrength = parseInt(document.getElementById("equippedShieldStrength").innerText)
+            }
+            if (document.getElementById("equippedShieldWisdom") != null) {
+                itemWisdom = parseInt(document.getElementById("equippedShieldWisdom").innerText)
+            }
+            if (document.getElementById("equippedShieldHP") != null) {
+                itemHp = parseInt(document.getElementById("equippedShieldHP").innerText)
+            }
+            if (document.getElementById("equippedShieldDmg") != null) {
+                thisItemDmg = parseFloat(document.getElementById("equippedShieldDmg").innerText)
+            }
+            if (document.getElementById("equippedShieldHealth") != null) {
+                thisItemHealth = parseFloat(document.getElementById("equippedShieldHealth").innerText)
+            }
+            if (document.getElementById("equippedShieldDodge") != null) {
+                thisItemDodge = parseFloat(document.getElementById("equippedShieldDodge").innerText)
+            }
+            totalEqDmg+=thisItemDmg;
+            totalEqHealth+=thisItemHealth;
+            totalEqDodge+=thisItemDodge;
+
+            totalEqWisdom+=itemWisdom;
+            totalEqStrength+=itemStrength;
+            totalEqHP+=itemHp;
+            document.getElementById("userStrength").innerText = "" + (parseInt(document.getElementById("userStrength").innerText) + itemStrength);
+            document.getElementById("userWisdom").innerText = "" + (parseInt(document.getElementById("userWisdom").innerText) + itemWisdom);
+            document.getElementById("userHPs").innerText = "" + (parseInt(document.getElementById("userHPs").innerText) + itemHp);
+
+        }
+        if (document.getElementById("helmetHolder").children.length > 1) {
+            let itemWisdom = 0;
+            let itemStrength = 0;
+            let itemHp = 0;
+            let thisItemDmg=0;
+            let thisItemHealth=0;
+            let thisItemDodge=0;
+            if (document.getElementById("equippedHelmetStrength") != null) {
+                itemStrength = parseInt(document.getElementById("equippedHelmetStrength").innerText)
+            }
+            if (document.getElementById("equippedHelmetWisdom") != null) {
+                itemWisdom = parseInt(document.getElementById("equippedHelmetWisdom").innerText)
+            }
+            if (document.getElementById("equippedHelmetHP") != null) {
+                itemHp = parseInt(document.getElementById("equippedHelmetHP").innerText)
+            }
+            if (document.getElementById("equippedHelmetDmg") != null) {
+                thisItemDmg = parseFloat(document.getElementById("equippedHelmetDmg").innerText)
+            }
+            if (document.getElementById("equippedHelmetHealth") != null) {
+                thisItemHealth = parseFloat(document.getElementById("equippedHelmetHealth").innerText)
+            }
+            if (document.getElementById("equippedHelmetDodge") != null) {
+                thisItemDodge = parseFloat(document.getElementById("equippedHelmetDodge").innerText)
+            }
+            totalEqDmg+=thisItemDmg;
+            totalEqHealth+=thisItemHealth;
+            totalEqDodge+=thisItemDodge;
+
+            totalEqWisdom+=itemWisdom;
+            totalEqStrength+=itemStrength;
+            totalEqHP+=itemHp;
+            document.getElementById("userStrength").innerText = "" + (parseInt(document.getElementById("userStrength").innerText) + itemStrength);
+            document.getElementById("userWisdom").innerText = "" + (parseInt(document.getElementById("userWisdom").innerText) + itemWisdom);
+            document.getElementById("userHPs").innerText = "" + (parseInt(document.getElementById("userHPs").innerText) + itemHp);
+
+        }
+        if (document.getElementById("weaponHolder").children.length > 1) {
+
+            let itemWisdom = 0;
+            let itemStrength = 0;
+            let itemHp = 0;
+            let thisItemDmg=0;
+            let thisItemHealth=0;
+            let thisItemDodge=0;
+            if (document.getElementById("equippedWeaponStrength") != null) {
+                itemStrength = parseInt(document.getElementById("equippedWeaponStrength").innerText)
+            }
+            if (document.getElementById("equippedWeaponWisdom") != null) {
+                itemWisdom = parseInt(document.getElementById("equippedWeaponWisdom").innerText)
+            }
+            if (document.getElementById("equippedWeaponHP") != null) {
+                itemHp = parseInt(document.getElementById("equippedWeaponHP").innerText)
+            }
+            if (document.getElementById("equippedWeaponDmg") != null) {
+                thisItemDmg = parseFloat(document.getElementById("equippedWeaponDmg").innerText)
+            }
+            if (document.getElementById("equippedWeaponHealth") != null) {
+                thisItemHealth = parseFloat(document.getElementById("equippedWeaponHealth").innerText)
+            }
+            if (document.getElementById("equippedWeaponDodge") != null) {
+                thisItemDodge = parseFloat(document.getElementById("equippedWeaponDodge").innerText)
+            }
+            totalEqDmg+=thisItemDmg;
+            totalEqHealth+=thisItemHealth;
+            totalEqDodge+=thisItemDodge;
+
+            totalEqWisdom+=itemWisdom;
+            totalEqStrength+=itemStrength;
+            totalEqHP+=itemHp;
+            document.getElementById("userStrength").innerText = "" + (parseInt(document.getElementById("userStrength").innerText) + itemStrength);
+            document.getElementById("userWisdom").innerText = "" + (parseInt(document.getElementById("userWisdom").innerText) + itemWisdom);
+            document.getElementById("userHPs").innerText = "" + (parseInt(document.getElementById("userHPs").innerText) + itemHp);
+        }
+        if (document.getElementById("necklaceHolder").children.length > 1) {
+            let itemWisdom = 0;
+            let itemStrength = 0;
+            let itemHp = 0;
+            let thisItemDmg=0;
+            let thisItemHealth=0;
+            let thisItemDodge=0;
+            if (document.getElementById("equippedNecklaceStrength") != null) {
+                itemStrength = parseInt(document.getElementById("equippedNecklaceStrength").innerText)
+            }
+            if (document.getElementById("equippedNecklaceWisdom") != null) {
+                itemWisdom = parseInt(document.getElementById("equippedNecklaceWisdom").innerText)
+            }
+            if (document.getElementById("equippedNecklaceHP") != null) {
+                itemHp = parseInt(document.getElementById("equippedNecklaceHP").innerText)
+            }
+            if (document.getElementById("equippedNecklaceDmg") != null) {
+                thisItemDmg = parseFloat(document.getElementById("equippedNecklaceDmg").innerText)
+            }
+            if (document.getElementById("equippedNecklaceHealth") != null) {
+                thisItemHealth = parseFloat(document.getElementById("equippedNecklaceHealth").innerText)
+            }
+            if (document.getElementById("equippedNecklaceDodge") != null) {
+                thisItemDodge = parseFloat(document.getElementById("equippedNecklaceDodge").innerText)
+            }
+            totalEqDmg+=thisItemDmg;
+            totalEqHealth+=thisItemHealth;
+            totalEqDodge+=thisItemDodge;
+            totalEqWisdom+=itemWisdom;
+            totalEqStrength+=itemStrength;
+            totalEqHP+=itemHp;
+            document.getElementById("userStrength").innerText = "" + (parseInt(document.getElementById("userStrength").innerText) + itemStrength);
+            document.getElementById("userWisdom").innerText = "" + (parseInt(document.getElementById("userWisdom").innerText) + itemWisdom);
+            document.getElementById("userHPs").innerText = "" + (parseInt(document.getElementById("userHPs").innerText) + itemHp);
+
+        }
+        if (document.getElementById("gauntletHolder").children.length > 1) {
+            let itemWisdom = 0;
+            let itemStrength = 0;
+            let itemHp = 0;
+            let thisItemDmg=0;
+            let thisItemHealth=0;
+            let thisItemDodge=0;
+
+
+            if (document.getElementById("equippedGauntletStrength") != null) {
+                itemStrength = parseInt(document.getElementById("equippedGauntletStrength").innerText)
+            }
+            if (document.getElementById("equippedGauntletWisdom") != null) {
+                itemWisdom = parseInt(document.getElementById("equippedGauntletWisdom").innerText)
+            }
+            if (document.getElementById("equippedGauntletHP") != null) {
+                itemHp = parseInt(document.getElementById("equippedGauntletHP").innerText)
+            }
+            if (document.getElementById("equippedGauntletDmg") != null) {
+                thisItemDmg = parseFloat(document.getElementById("equippedGauntletDmg").innerText)
+            }
+            if (document.getElementById("equippedGauntletHealth") != null) {
+                thisItemHealth = parseFloat(document.getElementById("equippedGauntletHealth").innerText)
+            }
+            if (document.getElementById("equippedGauntletDodge") != null) {
+                thisItemDodge = parseFloat(document.getElementById("equippedGauntletDodge").innerText)
+            }
+            totalEqDmg+=thisItemDmg;
+            totalEqHealth+=thisItemHealth;
+            totalEqDodge+=thisItemDodge;
+            totalEqWisdom+=itemWisdom;
+            totalEqStrength+=itemStrength;
+            totalEqHP+=itemHp;
+            document.getElementById("userStrength").innerText = "" + (parseInt(document.getElementById("userStrength").innerText) + itemStrength);
+            document.getElementById("userWisdom").innerText = "" + (parseInt(document.getElementById("userWisdom").innerText) + itemWisdom);
+            document.getElementById("userHPs").innerText = "" + (parseInt(document.getElementById("userHPs").innerText) + itemHp);
+
+        }
+        if (document.getElementById("ringHolder").children.length > 1) {
+            let itemWisdom = 0;
+            let itemStrength = 0;
+            let itemHp = 0;
+            let thisItemDmg=0;
+            let thisItemHealth=0;
+            let thisItemDodge=0;
+            if(document.getElementById("equippedRingStrength")!=null)
+            {
+                itemStrength =parseInt(document.getElementById("equippedRingStrength").innerText)
+            }
+            if(document.getElementById("equippedRingWisdom")!=null)
+            {
+                itemWisdom=parseInt(document.getElementById("equippedRingWisdom").innerText)
+            }
+            if(document.getElementById("equippedRingHP")!=null)
+            {
+                itemHp=parseInt(document.getElementById("equippedRingHP").innerText)
+            }
+            if (document.getElementById("equippedRingDmg") != null) {
+                thisItemDmg = parseFloat(document.getElementById("equippedRingDmg").innerText)
+            }
+            if (document.getElementById("equippedRingHealth") != null) {
+                thisItemHealth = parseFloat(document.getElementById("equippedRingHealth").innerText)
+            }
+            if (document.getElementById("equippedRingDodge") != null) {
+                thisItemDodge = parseFloat(document.getElementById("equippedRingDodge").innerText)
+            }
+            totalEqDmg+=thisItemDmg;
+            totalEqHealth+=thisItemHealth;
+            totalEqDodge+=thisItemDodge;
+            totalEqWisdom+=itemWisdom;
+            totalEqStrength+=itemStrength;
+            totalEqHP+=itemHp;
+            document.getElementById("userStrength").innerText = "" + (parseInt(document.getElementById("userStrength").innerText)+itemStrength);
+            document.getElementById("userWisdom").innerText =  "" + (parseInt(document.getElementById("userWisdom").innerText)+itemWisdom);
+            document.getElementById("userHPs").innerText =  "" + (parseInt(document.getElementById("userHPs").innerText)+itemHp);
+
+        }
+        if (document.getElementById("plateHolder").children.length > 1) {
+            let itemWisdom = 0;
+            let itemStrength = 0;
+            let itemHp = 0;
+            let thisItemDmg=0;
+            let thisItemHealth=0;
+            let thisItemDodge=0;
+
+            if(document.getElementById("equippedPlateStrength")!=null)
+            {
+                itemStrength =parseInt(document.getElementById("equippedPlateStrength").innerText)
+            }
+            if(document.getElementById("equippedPlateWisdom")!=null)
+            {
+                itemWisdom=parseInt(document.getElementById("equippedPlateWisdom").innerText)
+            }
+            if(document.getElementById("equippedPlateHP")!=null)
+            {
+                itemHp=parseInt(document.getElementById("equippedPlateHP").innerText)
+            }
+            if (document.getElementById("equippedPlateDmg") != null) {
+                thisItemDmg = parseFloat(document.getElementById("equippedPlateDmg").innerText)
+            }
+            if (document.getElementById("equippedPlateHealth") != null) {
+                thisItemHealth = parseFloat(document.getElementById("equippedPlateHealth").innerText)
+            }
+            if (document.getElementById("equippedPlateDodge") != null) {
+                thisItemDodge = parseFloat(document.getElementById("equippedPlateDodge").innerText)
+            }
+            totalEqDmg+=thisItemDmg;
+            totalEqHealth+=thisItemHealth;
+            totalEqDodge+=thisItemDodge;
+
+            totalEqWisdom+=itemWisdom;
+            totalEqStrength+=itemStrength;
+            totalEqHP+=itemHp;
+
+            document.getElementById("userStrength").innerText = "" + (parseInt(document.getElementById("userStrength").innerText)+itemStrength);
+            document.getElementById("userWisdom").innerText =  "" + (parseInt(document.getElementById("userWisdom").innerText)+itemWisdom);
+            document.getElementById("userHPs").innerText =  "" + (parseInt(document.getElementById("userHPs").innerText)+itemHp);
+
+        }
+
+        totalDmgFromItems += totalEqDmg;
+        totalDodgeFromItems += totalEqDodge;
+        totalHealthFromItems += totalEqHealth;
+        totalWisdomFromItems+=totalEqWisdom;
+        totalStrengthFromItems+=totalEqStrength;
+        totalHPfromItems+=totalEqHP;
+
     }
 
 
