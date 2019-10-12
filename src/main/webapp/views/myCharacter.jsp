@@ -11,6 +11,7 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="../resources/css/backgroundMapLoginRegistr.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/sideMenu.css">
     <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash&display=swap" rel="stylesheet">
 
     <title>MyCharacter</title>
@@ -97,7 +98,7 @@
             height: 300px;
             top: -20px;
             right: -190px;
-            z-index: 150;
+            z-index: 300;
             display: none;
         }
 
@@ -142,6 +143,8 @@
         .itemHolder {
             position: relative;
         }
+
+
     </style>
 </head>
 <body>
@@ -170,6 +173,21 @@
                 </ol>
 
             </div>
+
+            <%--side menu--%>
+            <div id="sideMenu">
+
+                <ul id="sideList">
+                    <li class="sideMenuLiTitle">Wyprawy</li>
+                    <li class="sideMenuLi" ><a href="/showMapTundra">Tundra</a></li>
+                    <li class="sideMenuLi"><a href="/showMapWinterDespair">Zimowa Rozpacz</a></li>
+                </ul>
+            </div>
+            <%--end of side menu--%>
+
+
+
+
             <table id="itemHolderTable" cellpadding="5px">
                 <tr>
 

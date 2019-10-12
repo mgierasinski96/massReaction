@@ -15,8 +15,6 @@ $(document).ready(function () {
    // alert("po odswiezeniu strony punktow "+totalHPfromItems);
    // alert("po odswiezeniu strony zycia "+totalHealthFromItems)
 
-
-//TODO KLIKNIECIE W TRENING PRZY ZALOZONYM ITEMIE SPRAWIA ZE KOSZT TRENINGU ZBYT WIELE DROZEJE
     var items = document.getElementsByClassName("item");
     var itemHolders = document.getElementsByClassName("itemHolder");
     var bagSlots = document.getElementsByClassName("bagSlot");
@@ -284,6 +282,7 @@ $(document).ready(function () {
                 }
             );
 
+            $(this).children("div").css("z-index","300");
             $(this).children("div").show(30);
 
         }, function (evt) {

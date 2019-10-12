@@ -44,6 +44,18 @@
         <put-attribute name="body" value="/views/myCharacter.jsp" />
     </definition>
 
+    <definition name="tundraMap" extends="base.definition">
+        <put-attribute name="title" value="TundraMap" />
+        <put-attribute name="body" value="/views/tundraMap.jsp" />
+    </definition>
+
+    <definition name="winterDespairMap" extends="base.definition">
+        <put-attribute name="title" value="WinterDespair" />
+        <put-attribute name="body" value="/views/winterDespairMap.jsp" />
+    </definition>
+
+
+
 
  
 </tiles-definitions>

@@ -27,7 +27,6 @@ public class TrainController {
         if (appUser != null) {
             double newUserTotalHp = appUser.getUserTotalHP() + 1 * appUser.getUserProfession().getHpCalculation();
             newUserTotalHp= MathRound.round(newUserTotalHp,2);
-            System.out.println("total hp" + newUserTotalHp);
 
             appUserService.trainHp(newHealthValue, newUserTotalHp, newUserGold, appUser.getUserId());
         }
